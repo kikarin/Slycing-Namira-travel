@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Promo Namira Travel</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Tailwind Custom Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    }
+
+    .video-wrapper iframe {
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+
+    .video-wrapper:hover iframe {
+      transform: scale(1.02);
+      border-color: #C7A200;
+    }
+
+    .carousel-dot.active {
+      background-color: #00534D !important;
+      width: 16px !important;
+      height: 16px !important;
+    }
+  </style>
+</head>
+
+<body class="font-poppins text-gray-800">
+
+  <section class="py-16">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-semibold text-primary relative inline-block">
+        Video Namira Travel
+        <span class="block w-3/5 h-[3px] bg-secondary mx-auto mt-2 rounded-full"></span>
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Saksikan perjalanan dan pelayanan terbaik dari 
+        <span class="text-secondary font-semibold">PT. Namira Travel</span> —
+        pembimbing perjalanan ibadah Anda menuju Tanah Suci.
+      </p>
+    </div>
+
+    <div class="relative max-w-3xl mx-auto">
+      <!-- Video Slides -->
+      <div class="relative overflow-hidden rounded-xl shadow-xl" id="video-carousel">
+        <div class="video-wrapper">
+          <iframe
+            id="video-frame"
+            class="w-full aspect-video border-4 border-transparent rounded-xl"
+            src="https://www.youtube.com/embed/wGYnLA-MKDg"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button
+        id="prevBtn"
+        class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary text-primary hover:text-white transition p-3 rounded-full shadow-lg"
+      >
+        <i class="fa fa-chevron-left"></i>
+      </button>
+      <button
+        id="nextBtn"
+        class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-primary text-primary hover:text-white transition p-3 rounded-full shadow-lg"
+      >
+        <i class="fa fa-chevron-right"></i>
+      </button>
+
+      <!-- Indicators -->
+      <div class="flex justify-center mt-6 space-x-3">
+        <div class="carousel-dot w-3 h-3 bg-secondary rounded-full cursor-pointer" data-index="0"></div>
+        <div class="carousel-dot w-3 h-3 bg-secondary/60 rounded-full cursor-pointer" data-index="1"></div>
+        <div class="carousel-dot w-3 h-3 bg-secondary/60 rounded-full cursor-pointer" data-index="2"></div>
+        <div class="carousel-dot w-3 h-3 bg-secondary/60 rounded-full cursor-pointer" data-index="3"></div>
+        <div class="carousel-dot w-3 h-3 bg-secondary/60 rounded-full cursor-pointer" data-index="4"></div>
+        <div class="carousel-dot w-3 h-3 bg-secondary/60 rounded-full cursor-pointer" data-index="5"></div>
+        <div class="carousel-dot w-3 h-3 bg-secondary/60 rounded-full cursor-pointer" data-index="6"></div>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mt-10">
+      <a
+        href="https://www.youtube.com/@namiratravelofficial"
+        target="_blank"
+        class="inline-block bg-primary text-white font-medium px-6 py-3 rounded-full hover:bg-secondary transition duration-300"
+      >
+        <i class="fab fa-youtube mr-2"></i> Lihat Semua di YouTube
+      </a>
+    </div>
+  </section>
+
+  <script>
+    const videos = [
+      "https://www.youtube.com/embed/wGYnLA-MKDg",
+      "https://www.youtube.com/embed/DWOuuZG1nLM",
+      "https://www.youtube.com/embed/cDuRrtmAq1Q",
+      "https://www.youtube.com/embed/KyluJ81G_nU",
+      "https://www.youtube.com/embed/E1CjIaOJ1E4",
+      "https://www.youtube.com/embed/qZHLcFsOMCs",
+      "https://www.youtube.com/embed/rVC30YjLsTw",
+    ];
+
+    let currentIndex = 0;
+    const frame = document.getElementById("video-frame");
+    const dots = document.querySelectorAll(".carousel-dot");
+
+    function updateCarousel(index) {
+      frame.src = videos[index];
+      dots.forEach(dot => dot.classList.remove("active"));
+      dots[index].classList.add("active");
+    }
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % videos.length;
+      updateCarousel(currentIndex);
+    });
+
+    document.getElementById("prevBtn").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + videos.length) % videos.length;
+      updateCarousel(currentIndex);
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener("click", () => {
+        currentIndex = parseInt(dot.dataset.index);
+        updateCarousel(currentIndex);
+      });
+    });
+
+    // Auto play
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % videos.length;
+      updateCarousel(currentIndex);
+    }, 3000);
+  </script>
+</body>
+</html>

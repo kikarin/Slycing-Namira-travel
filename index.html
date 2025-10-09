@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Namira Travel</title>
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- Owl Carousel CSS (untuk promo.html) -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+  />
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+  />
+
+  <!-- Tailwind Custom Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'Helvetica', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-poppins tracking-wide">
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Hero / Section -->
+  <div id="section" class="mb-5"></div>
+
+  <!-- Promo Carousel -->
+  <div id="promo"></div>
+
+  <!-- YouTube Carousel Section -->
+  <div id="youtube"></div>
+
+  <!-- Paket Section -->
+  <div id="paket"></div>
+
+  <div id="whychoose"></div>
+
+  <div id="paket_tab"></div>
+
+  <div id="testimonials"></div>
+
+  <div id="galeri"></div>
+
+  <div id="download"></div>
+
+  <div id="cabang"></div>
+
+  <div id="artikel"></div>
+
+  <div id="footer"></div>
+
+  <!-- jQuery & OwlCarousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- Script untuk memuat file HTML eksternal -->
+  <script>
+    // Fungsi umum untuk include file HTML dan jalankan script di dalamnya
+    function includeHTML(file, targetId) {
+      fetch(file)
+        .then(response => {
+          if (!response.ok) throw new Error(`Gagal memuat ${file}`);
+          return response.text();
+        })
+        .then(data => {
+          const container = document.getElementById(targetId);
+          container.innerHTML = data;
+
+          // Jalankan ulang semua <script> di dalam file yang di-include
+          container.querySelectorAll('script').forEach(oldScript => {
+            const newScript = document.createElement('script');
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+          });
+        })
+        .catch(error => console.error(error));
+    }
+
+    includeHTML('nav.html', 'navbar');
+    includeHTML('section.html', 'section');
+    includeHTML('promo.html', 'promo');
+    includeHTML('youtube.html', 'youtube'); 
+    includeHTML('paket.html', 'paket');
+    includeHTML('whychoose.html', 'whychoose');
+    includeHTML('paket_tab.html', 'paket_tab');
+    includeHTML('testimonials.html', 'testimonials');
+    includeHTML('galeri.html', 'galeri');
+    includeHTML('download.html', 'download');
+    includeHTML('cabang.html', 'cabang');
+    includeHTML('artikel.html', 'artikel');
+    includeHTML('footer.html', 'footer');
+  </script>
+
+</body>
+</html>

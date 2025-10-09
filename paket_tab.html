@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Tabungan Umrah</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#00534D",
+            secondary: "#C7A200",
+          },
+          fontFamily: {
+            poppins: ["Poppins", "Helvetica", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 470px;
+      height: 2px;
+      background-color: #ffffffbb;
+      border-radius: 9999px;
+      position: absolute;
+      left: 2.5%;
+      bottom: 83%;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-poppins">
+  <!-- Section: Program Tabungan -->
+  <section
+    id="listings_package"
+    class="relative w-full bg-cover bg-center bg-no-repeat"
+    style="background-image: url('./image.jpg');"
+  >
+    <!-- Overlay kecil (bagian bawah) -->
+    <div class="absolute bottom-0 left-0 w-full h-full bg-primary/65 backdrop-brightness-75"></div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-20 text-white">
+      <!-- Header -->
+      <div class="text-center lg:text-left mb-10">
+        <h2 class="text-3xl lg:text-4xl font-bold text-secondary section-title">
+          Program Paket Tabungan
+        </h2>
+        <p class="text-gray-100 mt-3 max-w-2xl mx-auto lg:mx-0">
+          <span class="font-semibold text-white">Namira Travel</span> bekerjasama dengan
+          <span class="text-secondary font-semibold">Bank Syariah Indonesia (BSI)</span> untuk memudahkan jamaah
+          menabung menuju Tanah Suci.
+        </p>
+      </div>
+
+      <!-- Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <!-- Left: Illustration -->
+        <div class="flex justify-center lg:justify-start">
+          <div
+            class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-lg max-w-md transition-transform duration-300 hover:scale-105"
+          >
+            <img
+              src="https://storage.googleapis.com/muslimpergi/uploads/site/logo/6/logo-namira-2023_300px.png"
+              alt="Logo Namira Travel"
+              class="w-40 mx-auto mb-5"
+            />
+            <h4 class="text-xl font-semibold mb-2 text-center">#MenabungUntukUmrah</h4>
+            <p class="text-gray-100 text-center text-sm">
+              Bersama Namira Travel & BSI, wujudkan impian ibadah Umrah dengan cara yang lebih mudah, aman, dan sesuai
+              syariah.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Steps Timeline -->
+        <div>
+          <h4 class="text-2xl font-bold mb-8 text-secondary">
+            Cara Pendaftaran Tabungan Umrah
+          </h4>
+
+<div class="relative pl-10">
+  <!-- Garis vertikal utama -->
+  <div class="absolute left-8 top-0 w-[2px] h-full bg-secondary rounded-full"></div>
+
+  <ol class="space-y-10 relative z-10">
+    <!-- Step 1 -->
+    <li class="flex items-start gap-4 group relative">
+      <!-- Nomor -->
+      <div
+        class="w-8 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg shadow-md relative z-10 border-2 border-secondary group-hover:scale-110 transition-transform duration-300"
+      >
+        1
+      </div>
+      <!-- Teks -->
+      <p class="text-gray-100 group-hover:text-white transition-colors duration-300 leading-relaxed">
+        Hubungi Customer Service <strong>Namira Travel</strong>.
+      </p>
+    </li>
+
+    <!-- Step 2 -->
+    <li class="flex items-start gap-4 group relative">
+      <div
+        class="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg shadow-md relative z-10 border-2 border-secondary group-hover:scale-110 transition-transform duration-300"
+      >
+        2
+      </div>
+      <p class="text-gray-100 group-hover:text-white transition-colors duration-300 leading-relaxed">
+        Isi formulir pendaftaran tabungan melalui aplikasi <strong>Namira Travel</strong>.
+      </p>
+    </li>
+
+    <!-- Step 3 -->
+    <li class="flex items-start gap-4 group relative">
+      <div
+        class="w-9 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg shadow-md relative z-10 border-2 border-secondary group-hover:scale-110 transition-transform duration-300"
+      >
+        3
+      </div>
+      <p class="text-gray-100 group-hover:text-white transition-colors duration-300 leading-relaxed">
+        Lengkapi data diri dan nominal tabungan yang diinginkan.
+      </p>
+    </li>
+
+    <!-- Step 4 -->
+    <li class="flex items-start gap-4 group relative">
+      <div
+        class="w-8 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg shadow-md relative z-10 border-2 border-secondary group-hover:scale-110 transition-transform duration-300"
+      >
+        4
+      </div>
+      <p class="text-gray-100 group-hover:text-white transition-colors duration-300 leading-relaxed">
+        Upload bukti transfer melalui aplikasi.
+      </p>
+    </li>
+
+    <!-- Step 5 -->
+    <li class="flex items-start gap-4 group relative">
+      <div
+        class="w-10 h-10 rounded-full bg-secondary text-primary flex items-center justify-center font-bold text-lg shadow-md relative z-10 border-2 border-secondary group-hover:scale-110 transition-transform duration-300"
+      >
+        5
+      </div>
+      <p class="text-gray-100 group-hover:text-white transition-colors duration-300 leading-relaxed">
+        Tim Finance <strong>Namira Travel</strong> akan memverifikasi pembayaran Anda.
+      </p>
+    </li>
+  </ol>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

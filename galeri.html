@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri Foto</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'Helvetica', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-poppins bg-white text-gray-800">
+
+  <!-- Section Galeri -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="flex flex-col lg:flex-row items-center justify-between mb-12 border-b border-gray-200 pb-6">
+        <div class="text-center lg:text-left mb-6 lg:mb-0">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-primary tracking-tight">Galeri Foto</h2>
+          <p class="mt-3 text-gray-600 text-base max-w-xl">
+            Beberapa momen kegiatan jama'ah <span class="text-secondary font-semibold">Namira Travel</span> selama perjalanan ibadah.
+          </p>
+        </div>
+        <div>
+          <a href="/galleries"
+            class="inline-block bg-primary text-white px-6 py-3 rounded-xl font-semibold shadow-md hover:bg-primary/90 hover:shadow-lg transition duration-300">
+            <i class="fa-solid fa-images mr-2"></i> Lihat Semua
+          </a>
+        </div>
+      </div>
+
+      <!-- Galeri Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Item 1 -->
+        <div class="relative group overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/8393/medium_galeri_umroh_SBY.jpg"
+            alt="Dokumentasi Umroh 06 Februari 2025 (Surabaya)"
+            class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-4">
+            <p class="text-white text-sm font-medium">Umroh 06 Februari 2025 (Surabaya)</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="relative group overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/8392/medium_galeri_umroh_JKT.jpg"
+            alt="Dokumentasi Umroh 06 Februari 2025 (Jakarta)"
+            class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-4">
+            <p class="text-white text-sm font-medium">Umroh 06 Februari 2025 (Jakarta)</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="relative group overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/7336/medium_Jamaah_Umroh_Plus_Turki_24_Januari_2025-01.jpg"
+            alt="Dokumentasi Umroh Plus Turki 24 Januari 2025"
+            class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-4">
+            <p class="text-white text-sm font-medium">Umroh Plus Turki 24 Januari 2025</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="relative group overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-500">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/7335/medium_Jamaah_Umroh_Akbar_22_Januari_2025-01.jpg"
+            alt="Dokumentasi Umroh Akbar 22 Januari 2025"
+            class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end p-4">
+            <p class="text-white text-sm font-medium">Umroh Akbar 22 Januari 2025</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

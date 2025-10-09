@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'Helvetica', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-poppins">
+
+  <!-- 🌅 Hero Section -->
+  <section class="relative w-full h-[90vh] overflow-hidden">
+    <!-- Background image full screen -->
+    <img src="image.jpg" alt="PT. NAMIRA"
+      class="absolute inset-0 w-full h-full object-cover object-center brightness-75">
+
+    <!-- Overlay text di tengah -->
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+      <h3 class="text-4xl sm:text-5xl font-bold mb-2 drop-shadow-lg">PT. NAMIRA</h3>
+      <p class="text-lg sm:text-xl mb-1 drop-shadow">Izin Umrah No.183 Thn 2020</p>
+      <p class="text-lg sm:text-xl drop-shadow">Izin Haji No.693 Thn 2020</p>
+      <h3 class="mt-4 text-3xl sm:text-4xl font-semibold italic"
+        style="font-family:'Brush Script MT',cursive;">
+        Ibadah Mudah Sesuai Syariah
+      </h3>
+    </div>
+  </section>
+
+  <!-- 🕌 About Us / Banner -->
+  <section class="w-full bg-white m-0 p-0">
+    <img class="w-full object-cover object-center"
+      src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/3394/namira-banner-web-visa-provider-haji-umroh_420px.min.jpg"
+      alt="Namira Visa Provider Haji Umroh Terpercaya" />
+  </section>
+
+</body>
+</html>

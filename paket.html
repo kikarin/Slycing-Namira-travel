@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paket Umroh</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'Helvetica', 'sans-serif'],
+          },
+          transitionTimingFunction: {
+            'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-poppins">
+
+  <section id="listings-package" class="w-full bg-white py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <!-- Header Section -->
+      <div class="flex flex-col lg:flex-row items-center justify-between mb-12">
+        <div class="text-center lg:text-left max-w-xl">
+          <h2 class="text-3xl font-bold text-primary">Paket Tersedia</h2>
+          <p class="mt-4 text-gray-600">
+            Allah tidak memanggil orang-orang yang mampu, tapi Allah memampukan orang-orang yang terpanggil
+            untuk berkunjung ke Baitullah.
+          </p>
+        </div>
+        <div class="mt-6 lg:mt-0">
+          <a href="/listings"
+             class="inline-block bg-primary text-white px-6 py-2.5 rounded-md font-semibold hover:bg-primary/80 transition">
+            <i class="fa fa-list mr-2"></i>Lihat Semua Paket
+          </a>
+        </div>
+      </div>
+
+      <!-- Packages Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card Item -->
+        <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-2xl transition duration-500">
+          <figure class="relative">
+            <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7602/medium_Flyer_Umroh_Gold_Plus_Thaif_20_Desember_2025_-_AGEN.jpg"
+                 alt="Umroh Gold" class="w-full h-64 object-cover object-top">
+            <span class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</span>
+          </figure>
+          <div class="p-5">
+            <h3 class="text-lg font-bold mb-2">
+              <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+                 class="text-primary hover:underline">
+                 UMROH GOLD 20 DESEMBER 2025
+              </a>
+            </h3>
+            <div class="mb-4">
+              <p class="font-bold text-lg">Rp39.900.000,- /pax</p>
+              <p class="text-gray-600 text-sm">QUAD</p>
+            </div>
+
+            <table class="w-full text-xs">
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2 w-6"><i class="fa fa-calendar text-secondary"></i></td>
+                  <td class="py-2">Jadwal Berangkat</td>
+                  <td class="py-2 font-medium text-gray-700">Sabtu</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-clock text-secondary"></i></td>
+                  <td class="py-2">Durasi</td>
+                  <td class="py-2">9 Hari</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-building text-secondary"></i></td>
+                  <td class="py-2">Kelas Hotel</td>
+                  <td class="py-2">
+                    <div class="flex space-x-1 text-yellow-400">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-users text-secondary"></i></td>
+                  <td class="py-2">Total Seat</td>
+                  <td class="py-2">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-check-circle text-secondary"></i></td>
+                  <td class="py-2 font-semibold">Available</td>
+                  <td class="py-2 font-semibold">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-map-marker text-secondary"></i></td>
+                  <td class="py-2">Berangkat dari</td>
+                  <td class="py-2">JAKARTA</td>
+                </tr>
+                <tr>
+                  <td class="py-2"><i class="fa fa-plane text-secondary"></i></td>
+                  <td class="py-2">Maskapai</td>
+                  <td class="py-2 text-gray-400">TBD</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+               class="block mt-6 text-center bg-primary text-white py-2.5 rounded-md font-semibold hover:bg-primary/80 transition">
+               <i class="fa fa-eye mr-2"></i>Lihat Detail
+            </a>
+          </div>
+        </div>
+        <!-- /Card Item -->
+                <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-2xl transition duration-500">
+          <figure class="relative">
+            <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7602/medium_Flyer_Umroh_Gold_Plus_Thaif_20_Desember_2025_-_AGEN.jpg"
+                 alt="Umroh Gold" class="w-full h-64 object-cover object-top">
+            <span class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</span>
+          </figure>
+          <div class="p-5">
+            <h3 class="text-lg font-bold mb-2">
+              <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+                 class="text-primary hover:underline">
+                 UMROH GOLD 20 DESEMBER 2025
+              </a>
+            </h3>
+            <div class="mb-4">
+              <p class="font-bold text-lg">Rp39.900.000,- /pax</p>
+              <p class="text-gray-600 text-sm">QUAD</p>
+            </div>
+
+            <table class="w-full text-xs">
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2 w-6"><i class="fa fa-calendar text-secondary"></i></td>
+                  <td class="py-2">Jadwal Berangkat</td>
+                  <td class="py-2 font-medium text-gray-700">Sabtu</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-clock text-secondary"></i></td>
+                  <td class="py-2">Durasi</td>
+                  <td class="py-2">9 Hari</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-building text-secondary"></i></td>
+                  <td class="py-2">Kelas Hotel</td>
+                  <td class="py-2">
+                    <div class="flex space-x-1 text-yellow-400">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-users text-secondary"></i></td>
+                  <td class="py-2">Total Seat</td>
+                  <td class="py-2">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-check-circle text-secondary"></i></td>
+                  <td class="py-2 font-semibold">Available</td>
+                  <td class="py-2 font-semibold">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-map-marker text-secondary"></i></td>
+                  <td class="py-2">Berangkat dari</td>
+                  <td class="py-2">JAKARTA</td>
+                </tr>
+                <tr>
+                  <td class="py-2"><i class="fa fa-plane text-secondary"></i></td>
+                  <td class="py-2">Maskapai</td>
+                  <td class="py-2 text-gray-400">TBD</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+               class="block mt-6 text-center bg-primary text-white py-2.5 rounded-md font-semibold hover:bg-primary/80 transition">
+               <i class="fa fa-eye mr-2"></i>Lihat Detail
+            </a>
+          </div>
+        </div>
+                <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-2xl transition duration-500">
+          <figure class="relative">
+            <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7602/medium_Flyer_Umroh_Gold_Plus_Thaif_20_Desember_2025_-_AGEN.jpg"
+                 alt="Umroh Gold" class="w-full h-64 object-cover object-top">
+            <span class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</span>
+          </figure>
+          <div class="p-5">
+            <h3 class="text-lg font-bold mb-2">
+              <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+                 class="text-primary hover:underline">
+                 UMROH GOLD 20 DESEMBER 2025
+              </a>
+            </h3>
+            <div class="mb-4">
+              <p class="font-bold text-lg">Rp39.900.000,- /pax</p>
+              <p class="text-gray-600 text-sm">QUAD</p>
+            </div>
+
+            <table class="w-full text-xs">
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2 w-6"><i class="fa fa-calendar text-secondary"></i></td>
+                  <td class="py-2">Jadwal Berangkat</td>
+                  <td class="py-2 font-medium text-gray-700">Sabtu</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-clock text-secondary"></i></td>
+                  <td class="py-2">Durasi</td>
+                  <td class="py-2">9 Hari</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-building text-secondary"></i></td>
+                  <td class="py-2">Kelas Hotel</td>
+                  <td class="py-2">
+                    <div class="flex space-x-1 text-yellow-400">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-users text-secondary"></i></td>
+                  <td class="py-2">Total Seat</td>
+                  <td class="py-2">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-check-circle text-secondary"></i></td>
+                  <td class="py-2 font-semibold">Available</td>
+                  <td class="py-2 font-semibold">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-map-marker text-secondary"></i></td>
+                  <td class="py-2">Berangkat dari</td>
+                  <td class="py-2">JAKARTA</td>
+                </tr>
+                <tr>
+                  <td class="py-2"><i class="fa fa-plane text-secondary"></i></td>
+                  <td class="py-2">Maskapai</td>
+                  <td class="py-2 text-gray-400">TBD</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+               class="block mt-6 text-center bg-primary text-white py-2.5 rounded-md font-semibold hover:bg-primary/80 transition">
+               <i class="fa fa-eye mr-2"></i>Lihat Detail
+            </a>
+          </div>
+        </div>
+                <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-2xl transition duration-500">
+          <figure class="relative">
+            <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7602/medium_Flyer_Umroh_Gold_Plus_Thaif_20_Desember_2025_-_AGEN.jpg"
+                 alt="Umroh Gold" class="w-full h-64 object-cover object-top">
+            <span class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</span>
+          </figure>
+          <div class="p-5">
+            <h3 class="text-lg font-bold mb-2">
+              <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+                 class="text-primary hover:underline">
+                 UMROH GOLD 20 DESEMBER 2025
+              </a>
+            </h3>
+            <div class="mb-4">
+              <p class="font-bold text-lg">Rp39.900.000,- /pax</p>
+              <p class="text-gray-600 text-sm">QUAD</p>
+            </div>
+
+            <table class="w-full text-xs">
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2 w-6"><i class="fa fa-calendar text-secondary"></i></td>
+                  <td class="py-2">Jadwal Berangkat</td>
+                  <td class="py-2 font-medium text-gray-700">Sabtu</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-clock text-secondary"></i></td>
+                  <td class="py-2">Durasi</td>
+                  <td class="py-2">9 Hari</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-building text-secondary"></i></td>
+                  <td class="py-2">Kelas Hotel</td>
+                  <td class="py-2">
+                    <div class="flex space-x-1 text-yellow-400">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-users text-secondary"></i></td>
+                  <td class="py-2">Total Seat</td>
+                  <td class="py-2">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-check-circle text-secondary"></i></td>
+                  <td class="py-2 font-semibold">Available</td>
+                  <td class="py-2 font-semibold">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-map-marker text-secondary"></i></td>
+                  <td class="py-2">Berangkat dari</td>
+                  <td class="py-2">JAKARTA</td>
+                </tr>
+                <tr>
+                  <td class="py-2"><i class="fa fa-plane text-secondary"></i></td>
+                  <td class="py-2">Maskapai</td>
+                  <td class="py-2 text-gray-400">TBD</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+               class="block mt-6 text-center bg-primary text-white py-2.5 rounded-md font-semibold hover:bg-primary/80 transition">
+               <i class="fa fa-eye mr-2"></i>Lihat Detail
+            </a>
+          </div>
+        </div>
+                <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-2xl transition duration-500">
+          <figure class="relative">
+            <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7602/medium_Flyer_Umroh_Gold_Plus_Thaif_20_Desember_2025_-_AGEN.jpg"
+                 alt="Umroh Gold" class="w-full h-64 object-cover object-top">
+            <span class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</span>
+          </figure>
+          <div class="p-5">
+            <h3 class="text-lg font-bold mb-2">
+              <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+                 class="text-primary hover:underline">
+                 UMROH GOLD 20 DESEMBER 2025
+              </a>
+            </h3>
+            <div class="mb-4">
+              <p class="font-bold text-lg">Rp39.900.000,- /pax</p>
+              <p class="text-gray-600 text-sm">QUAD</p>
+            </div>
+
+            <table class="w-full text-xs">
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2 w-6"><i class="fa fa-calendar text-secondary"></i></td>
+                  <td class="py-2">Jadwal Berangkat</td>
+                  <td class="py-2 font-medium text-gray-700">Sabtu</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-clock text-secondary"></i></td>
+                  <td class="py-2">Durasi</td>
+                  <td class="py-2">9 Hari</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-building text-secondary"></i></td>
+                  <td class="py-2">Kelas Hotel</td>
+                  <td class="py-2">
+                    <div class="flex space-x-1 text-yellow-400">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-users text-secondary"></i></td>
+                  <td class="py-2">Total Seat</td>
+                  <td class="py-2">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-check-circle text-secondary"></i></td>
+                  <td class="py-2 font-semibold">Available</td>
+                  <td class="py-2 font-semibold">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-map-marker text-secondary"></i></td>
+                  <td class="py-2">Berangkat dari</td>
+                  <td class="py-2">JAKARTA</td>
+                </tr>
+                <tr>
+                  <td class="py-2"><i class="fa fa-plane text-secondary"></i></td>
+                  <td class="py-2">Maskapai</td>
+                  <td class="py-2 text-gray-400">TBD</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+               class="block mt-6 text-center bg-primary text-white py-2.5 rounded-md font-semibold hover:bg-primary/80 transition">
+               <i class="fa fa-eye mr-2"></i>Lihat Detail
+            </a>
+          </div>
+        </div>
+                <div class="bg-white shadow-md rounded-xl overflow-hidden hover:shadow-2xl transition duration-500">
+          <figure class="relative">
+            <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7602/medium_Flyer_Umroh_Gold_Plus_Thaif_20_Desember_2025_-_AGEN.jpg"
+                 alt="Umroh Gold" class="w-full h-64 object-cover object-top">
+            <span class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</span>
+          </figure>
+          <div class="p-5">
+            <h3 class="text-lg font-bold mb-2">
+              <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+                 class="text-primary hover:underline">
+                 UMROH GOLD 20 DESEMBER 2025
+              </a>
+            </h3>
+            <div class="mb-4">
+              <p class="font-bold text-lg">Rp39.900.000,- /pax</p>
+              <p class="text-gray-600 text-sm">QUAD</p>
+            </div>
+
+            <table class="w-full text-xs">
+              <tbody>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2 w-6"><i class="fa fa-calendar text-secondary"></i></td>
+                  <td class="py-2">Jadwal Berangkat</td>
+                  <td class="py-2 font-medium text-gray-700">Sabtu</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-clock text-secondary"></i></td>
+                  <td class="py-2">Durasi</td>
+                  <td class="py-2">9 Hari</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-building text-secondary"></i></td>
+                  <td class="py-2">Kelas Hotel</td>
+                  <td class="py-2">
+                    <div class="flex space-x-1 text-yellow-400">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-users text-secondary"></i></td>
+                  <td class="py-2">Total Seat</td>
+                  <td class="py-2">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-check-circle text-secondary"></i></td>
+                  <td class="py-2 font-semibold">Available</td>
+                  <td class="py-2 font-semibold">40 pax</td>
+                </tr>
+                <tr class="border-b border-gray-200">
+                  <td class="py-2"><i class="fa fa-map-marker text-secondary"></i></td>
+                  <td class="py-2">Berangkat dari</td>
+                  <td class="py-2">JAKARTA</td>
+                </tr>
+                <tr>
+                  <td class="py-2"><i class="fa fa-plane text-secondary"></i></td>
+                  <td class="py-2">Maskapai</td>
+                  <td class="py-2 text-gray-400">TBD</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <a href="/listings/umroh-gold-20-desember-2025-erxlooxk6x"
+               class="block mt-6 text-center bg-primary text-white py-2.5 rounded-md font-semibold hover:bg-primary/80 transition">
+               <i class="fa fa-eye mr-2"></i>Lihat Detail
+            </a>
+          </div>
+        </div>
+        <!-- Duplikat card lain bisa disalin di sini -->
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

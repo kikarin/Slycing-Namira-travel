@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cabang PT. Namira Travel</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    * {
+      transition: all 0.3s ease;
+    }
+
+    .hover-glow:hover {
+      box-shadow: 0 0 25px rgba(199, 162, 0, 0.3);
+      border-color: #C7A200;
+      transform: translateY(-5px);
+    }
+
+    .wa-icon {
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    .group:hover .wa-icon {
+      animation-play-state: paused;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.15);
+        opacity: 0.85;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 font-poppins">
+
+  <!-- Section Cabang -->
+  <section class="relative py-20 overflow-hidden">
+    <!-- Background Accent -->
+    <div class="absolute inset-0 via-white to-secondary/5 pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="flex flex-col lg:flex-row items-center justify-between border-b border-gray-200 pb-6 mb-12" data-aos="fade-down">
+        <div class="text-center lg:text-left">
+          <h2 class="text-3xl md:text-4xl font-extrabold text-primary mb-2">
+            Cabang <span class="text-secondary">PT. Namira Travel</span>
+          </h2>
+          <p class="text-gray-600 max-w-xl">
+            Daftar kantor cabang kami di berbagai kota tempat Anda dapat membeli paket Umroh & Haji.
+          </p>
+        </div>
+        <div class="mt-6 lg:mt-0">
+          <a href="/pages/cabang-namira-travel-w6b5cmqs"
+            class="inline-flex items-center bg-primary text-white font-semibold px-6 py-3 rounded-full shadow-md hover:bg-primary/90 hover:shadow-lg transition">
+            <i class="fa-solid fa-map-location-dot mr-2 text-secondary"></i> Lihat Semua
+          </a>
+        </div>
+      </div>
+
+      <!-- Grid Cabang -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Cabang Card Template -->
+        <a href="https://wa.me/6281227005177?text=Assalamualaikum,%20Namira%20Travel%20Solo%2C+Saya+mau+menanyakan+perihal+paketan+umroh"
+          target="_blank" data-aos="fade-up" data-aos-delay="100"
+          class="group block bg-white border border-gray-200 rounded-2xl p-6 shadow-soft hover-glow">
+          <h3 class="text-lg font-semibold text-primary mb-2">Solo</h3>
+          <p class="text-secondary font-medium mb-2">
+            <i class="fab fa-whatsapp wa-icon mr-2"></i>0812-2700-5177
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Jl. Bone Barat 3 No.19, Banyuanyar, Kec. Banjarsari, Surakarta, Jawa Tengah 57137
+          </p>
+        </a>
+
+        <a href="https://wa.me/6285326313006?text=Assalamualaikum,%20Namira%20Travel%20Semarang%2C+Saya+mau+menanyakan+perihal+paketan+umroh"
+          target="_blank" data-aos="fade-up" data-aos-delay="150"
+          class="group block bg-white border border-gray-200 rounded-2xl p-6 shadow-soft hover-glow">
+          <h3 class="text-lg font-semibold text-primary mb-2">Semarang</h3>
+          <p class="text-secondary font-medium mb-2">
+            <i class="fab fa-whatsapp wa-icon mr-2"></i>0853-2631-3006
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Jl. Prof. Soedarto, Ruko A No 1, Tembalang, Kota Semarang, Jawa Tengah 50725
+          </p>
+        </a>
+
+        <a href="https://wa.me/6281324003885?text=Assalamualaikum,%20Namira%20Travel%20Majalengka%2C+Saya+mau+menanyakan+perihal+paketan+umroh"
+          target="_blank" data-aos="fade-up" data-aos-delay="200"
+          class="group block bg-white border border-gray-200 rounded-2xl p-6 shadow-soft hover-glow">
+          <h3 class="text-lg font-semibold text-primary mb-2">Majalengka</h3>
+          <p class="text-secondary font-medium mb-2">
+            <i class="fab fa-whatsapp wa-icon mr-2"></i>0813-2400-3885
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Jl. Gerakan Koperasi No.03, Majalengka Wetan, Kec. Majalengka, Kab. Majalengka, Jawa Barat 45411
+          </p>
+        </a>
+
+        <a href="https://wa.me/6285186897400?text=Assalamualaikum,%20Namira%20Travel%20Cianjur%2C+Saya+mau+menanyakan+perihal+paketan+umroh"
+          target="_blank" data-aos="fade-up" data-aos-delay="250"
+          class="group block bg-white border border-gray-200 rounded-2xl p-6 shadow-soft hover-glow">
+          <h3 class="text-lg font-semibold text-primary mb-2">Cianjur</h3>
+          <p class="text-secondary font-medium mb-2">
+            <i class="fab fa-whatsapp wa-icon mr-2"></i>0851-8689-7400
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Ruko Belka, Jl. KH Abdullah Bin Nuh No.4, Pamoyanan, Kab. Cianjur, Jawa Barat 43211
+          </p>
+        </a>
+
+        <a href="https://wa.me/6281231414497?text=Assalamualaikum,%20Namira%20Travel%20Tuban%2C+Saya+mau+menanyakan+perihal+paketan+umroh"
+          target="_blank" data-aos="fade-up" data-aos-delay="300"
+          class="group block bg-white border border-gray-200 rounded-2xl p-6 shadow-soft hover-glow">
+          <h3 class="text-lg font-semibold text-primary mb-2">Tuban</h3>
+          <p class="text-secondary font-medium mb-2">
+            <i class="fab fa-whatsapp wa-icon mr-2"></i>0812-3141-4497
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Jl. Raya Bulu - Jatirogo No.355, Sukolilo, Bancar, Tuban, Jawa Timur 62354
+          </p>
+        </a>
+
+        <a href="https://wa.me/6285819855486?text=Assalamualaikum,%20Namira%20Travel%20Surabaya%2C+Saya+mau+menanyakan+perihal+paketan+umroh"
+          target="_blank" data-aos="fade-up" data-aos-delay="350"
+          class="group block bg-white border border-gray-200 rounded-2xl p-6 shadow-soft hover-glow">
+          <h3 class="text-lg font-semibold text-primary mb-2">Surabaya</h3>
+          <p class="text-secondary font-medium mb-2">
+            <i class="fab fa-whatsapp wa-icon mr-2"></i>0858-1985-5486
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Jl. Siwalankerto No.27, Kel. Siwalankerto, Kec. Wonocolo, Kota Surabaya
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

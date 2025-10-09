@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artikels</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Custom Styles -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .article-card:hover img {
+            transform: scale(1.05);
+        }
+        .article-overlay {
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .article-card:hover .article-overlay {
+            opacity: 1;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00534D',
+                        secondary: '#C7A200',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-poppins">
+    <!-- Hero Section with Parallax -->
+    <section class="relative h-72 md:h-96 bg-cover bg-center bg-fixed" 
+             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://storage.googleapis.com/muslimpergi/uploads/site/background2/6/namira-banner-header.jpeg')">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fadeInUp">Artikel</h1>
+                <p class="text-lg text-white opacity-90">Informasi Terkini Seputar Umroh & Haji</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container max-w-6xl mx-auto px-4 py-16">
+        <div class="flex flex-wrap lg:flex-nowrap gap-8">
+            <!-- Articles Column -->
+            <div class="w-full lg:w-6xl">
+                <!-- Article Card -->
+                <article class="article-card mb-8 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fadeInUp">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-7/12 overflow-hidden">
+                            <figure class="relative">
+                                <a href="/articles/-umroh-musim-dingin-bersama-namira-travel">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/article/pict/25497/siap_siap.jpg" 
+                                         alt="❄️ Umroh Musim Dingin" 
+                                         class="w-full h-64 object-cover transition-transform duration-500">
+                                    <div class="article-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                                        <span class="text-white font-semibold px-6 py-2 border border-white rounded-lg">
+                                            Baca Selengkapnya
+                                        </span>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="w-full md:w-5/12 p-6">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-auto">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <i class="far fa-calendar"></i>
+                                        <span>01 October 2025</span>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-3">
+                                        <a href="/articles/-umroh-musim-dingin-bersama-namira-travel" 
+                                           class="text-gray-800 hover:text-primary transition-colors duration-300">
+                                            ❄️ Umroh Musim Dingin Bersama Namira Travel
+                                        </a>
+                                    </h3>
+                                    <p class="text-gray-600 line-clamp-3">
+                                        Umroh Musim Dingin dengan pengalaman yang berbeda dan istimewa
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card mb-8 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fadeInUp">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-7/12 overflow-hidden">
+                            <figure class="relative">
+                                <a href="/articles/-umroh-musim-dingin-bersama-namira-travel">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/article/pict/25497/siap_siap.jpg" 
+                                         alt="❄️ Umroh Musim Dingin" 
+                                         class="w-full h-64 object-cover transition-transform duration-500">
+                                    <div class="article-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                                        <span class="text-white font-semibold px-6 py-2 border border-white rounded-lg">
+                                            Baca Selengkapnya
+                                        </span>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="w-full md:w-5/12 p-6">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-auto">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <i class="far fa-calendar"></i>
+                                        <span>01 October 2025</span>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-3">
+                                        <a href="/articles/-umroh-musim-dingin-bersama-namira-travel" 
+                                           class="text-gray-800 hover:text-primary transition-colors duration-300">
+                                            ❄️ Umroh Musim Dingin Bersama Namira Travel
+                                        </a>
+                                    </h3>
+                                    <p class="text-gray-600 line-clamp-3">
+                                        Umroh Musim Dingin dengan pengalaman yang berbeda dan istimewa
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card mb-8 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fadeInUp">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-7/12 overflow-hidden">
+                            <figure class="relative">
+                                <a href="/articles/-umroh-musim-dingin-bersama-namira-travel">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/article/pict/25497/siap_siap.jpg" 
+                                         alt="❄️ Umroh Musim Dingin" 
+                                         class="w-full h-64 object-cover transition-transform duration-500">
+                                    <div class="article-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                                        <span class="text-white font-semibold px-6 py-2 border border-white rounded-lg">
+                                            Baca Selengkapnya
+                                        </span>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="w-full md:w-5/12 p-6">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-auto">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <i class="far fa-calendar"></i>
+                                        <span>01 October 2025</span>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-3">
+                                        <a href="/articles/-umroh-musim-dingin-bersama-namira-travel" 
+                                           class="text-gray-800 hover:text-primary transition-colors duration-300">
+                                            ❄️ Umroh Musim Dingin Bersama Namira Travel
+                                        </a>
+                                    </h3>
+                                    <p class="text-gray-600 line-clamp-3">
+                                        Umroh Musim Dingin dengan pengalaman yang berbeda dan istimewa
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card mb-8 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fadeInUp">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-7/12 overflow-hidden">
+                            <figure class="relative">
+                                <a href="/articles/-umroh-musim-dingin-bersama-namira-travel">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/article/pict/25497/siap_siap.jpg" 
+                                         alt="❄️ Umroh Musim Dingin" 
+                                         class="w-full h-64 object-cover transition-transform duration-500">
+                                    <div class="article-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                                        <span class="text-white font-semibold px-6 py-2 border border-white rounded-lg">
+                                            Baca Selengkapnya
+                                        </span>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="w-full md:w-5/12 p-6">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-auto">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <i class="far fa-calendar"></i>
+                                        <span>01 October 2025</span>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-3">
+                                        <a href="/articles/-umroh-musim-dingin-bersama-namira-travel" 
+                                           class="text-gray-800 hover:text-primary transition-colors duration-300">
+                                            ❄️ Umroh Musim Dingin Bersama Namira Travel
+                                        </a>
+                                    </h3>
+                                    <p class="text-gray-600 line-clamp-3">
+                                        Umroh Musim Dingin dengan pengalaman yang berbeda dan istimewa
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card mb-8 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fadeInUp">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-7/12 overflow-hidden">
+                            <figure class="relative">
+                                <a href="/articles/-umroh-musim-dingin-bersama-namira-travel">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/article/pict/25497/siap_siap.jpg" 
+                                         alt="❄️ Umroh Musim Dingin" 
+                                         class="w-full h-64 object-cover transition-transform duration-500">
+                                    <div class="article-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                                        <span class="text-white font-semibold px-6 py-2 border border-white rounded-lg">
+                                            Baca Selengkapnya
+                                        </span>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="w-full md:w-5/12 p-6">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-auto">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <i class="far fa-calendar"></i>
+                                        <span>01 October 2025</span>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-3">
+                                        <a href="/articles/-umroh-musim-dingin-bersama-namira-travel" 
+                                           class="text-gray-800 hover:text-primary transition-colors duration-300">
+                                            ❄️ Umroh Musim Dingin Bersama Namira Travel
+                                        </a>
+                                    </h3>
+                                    <p class="text-gray-600 line-clamp-3">
+                                        Umroh Musim Dingin dengan pengalaman yang berbeda dan istimewa
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card mb-8 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fadeInUp">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-7/12 overflow-hidden">
+                            <figure class="relative">
+                                <a href="/articles/-umroh-musim-dingin-bersama-namira-travel">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/article/pict/25497/siap_siap.jpg" 
+                                         alt="❄️ Umroh Musim Dingin" 
+                                         class="w-full h-64 object-cover transition-transform duration-500">
+                                    <div class="article-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                                        <span class="text-white font-semibold px-6 py-2 border border-white rounded-lg">
+                                            Baca Selengkapnya
+                                        </span>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="w-full md:w-5/12 p-6">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-auto">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <i class="far fa-calendar"></i>
+                                        <span>01 October 2025</span>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-3">
+                                        <a href="/articles/-umroh-musim-dingin-bersama-namira-travel" 
+                                           class="text-gray-800 hover:text-primary transition-colors duration-300">
+                                            ❄️ Umroh Musim Dingin Bersama Namira Travel
+                                        </a>
+                                    </h3>
+                                    <p class="text-gray-600 line-clamp-3">
+                                        Umroh Musim Dingin dengan pengalaman yang berbeda dan istimewa
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="article-card mb-8 bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 animate-fadeInUp">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="w-full md:w-7/12 overflow-hidden">
+                            <figure class="relative">
+                                <a href="/articles/-umroh-musim-dingin-bersama-namira-travel">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/article/pict/25497/siap_siap.jpg" 
+                                         alt="❄️ Umroh Musim Dingin" 
+                                         class="w-full h-64 object-cover transition-transform duration-500">
+                                    <div class="article-overlay absolute inset-0 bg-black/60 flex items-center justify-center">
+                                        <span class="text-white font-semibold px-6 py-2 border border-white rounded-lg">
+                                            Baca Selengkapnya
+                                        </span>
+                                    </div>
+                                </a>
+                            </figure>
+                        </div>
+                        <div class="w-full md:w-5/12 p-6">
+                            <div class="flex flex-col h-full">
+                                <div class="mb-auto">
+                                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                                        <i class="far fa-calendar"></i>
+                                        <span>01 October 2025</span>
+                                    </div>
+                                    <h3 class="text-xl font-semibold mb-3">
+                                        <a href="/articles/-umroh-musim-dingin-bersama-namira-travel" 
+                                           class="text-gray-800 hover:text-primary transition-colors duration-300">
+                                            ❄️ Umroh Musim Dingin Bersama Namira Travel
+                                        </a>
+                                    </h3>
+                                    <p class="text-gray-600 line-clamp-3">
+                                        Umroh Musim Dingin dengan pengalaman yang berbeda dan istimewa
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+
+                <!-- Pagination -->
+                <div class="flex justify-between items-center mt-12">
+                    <span class="text-gray-400 cursor-not-allowed">← Previous</span>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-primary text-white rounded">1</span>
+                        <a href="#" class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded">2</a>
+                        <a href="#" class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded">3</a>
+                    </div>
+                    <a href="#" class="text-primary hover:text-secondary transition-colors duration-300">
+                        Next →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="w-full lg:w-1/3">
+                <div class="sticky top-4">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h2 class="text-xl font-semibold mb-6 pb-4 border-b border-gray-100">
+                            Paket Terpopuler
+                        </h2>
+                        <div class="space-y-6">
+                            <!-- Package Item -->
+                            <div class="group">
+                                <a href="#" class="block relative rounded-lg overflow-hidden">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7629/small_HAJI_BATCH_2.jpg" 
+                                         alt="Package" 
+                                         class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute top-2 right-2 bg-white/90 px-3 py-1 rounded-full text-sm">
+                                        16 May 2026
+                                    </div>
+                                </a>
+                                <div class="mt-4">
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <h3 class="font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300">
+                                        HAJI BATCH 2 2026
+                                    </h3>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="text-sm text-gray-500">Mulai dari</span>
+                                        <span class="text-lg font-semibold text-primary">$20,500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <a href="#" class="block relative rounded-lg overflow-hidden">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7629/small_HAJI_BATCH_2.jpg" 
+                                         alt="Package" 
+                                         class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute top-2 right-2 bg-white/90 px-3 py-1 rounded-full text-sm">
+                                        16 May 2026
+                                    </div>
+                                </a>
+                                <div class="mt-4">
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <h3 class="font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300">
+                                        HAJI BATCH 2 2026
+                                    </h3>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="text-sm text-gray-500">Mulai dari</span>
+                                        <span class="text-lg font-semibold text-primary">$20,500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <a href="#" class="block relative rounded-lg overflow-hidden">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7629/small_HAJI_BATCH_2.jpg" 
+                                         alt="Package" 
+                                         class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute top-2 right-2 bg-white/90 px-3 py-1 rounded-full text-sm">
+                                        16 May 2026
+                                    </div>
+                                </a>
+                                <div class="mt-4">
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <h3 class="font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300">
+                                        HAJI BATCH 2 2026
+                                    </h3>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="text-sm text-gray-500">Mulai dari</span>
+                                        <span class="text-lg font-semibold text-primary">$20,500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <a href="#" class="block relative rounded-lg overflow-hidden">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7629/small_HAJI_BATCH_2.jpg" 
+                                         alt="Package" 
+                                         class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute top-2 right-2 bg-white/90 px-3 py-1 rounded-full text-sm">
+                                        16 May 2026
+                                    </div>
+                                </a>
+                                <div class="mt-4">
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <h3 class="font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300">
+                                        HAJI BATCH 2 2026
+                                    </h3>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="text-sm text-gray-500">Mulai dari</span>
+                                        <span class="text-lg font-semibold text-primary">$20,500</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="group">
+                                <a href="#" class="block relative rounded-lg overflow-hidden">
+                                    <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7629/small_HAJI_BATCH_2.jpg" 
+                                         alt="Package" 
+                                         class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute top-2 right-2 bg-white/90 px-3 py-1 rounded-full text-sm">
+                                        16 May 2026
+                                    </div>
+                                </a>
+                                <div class="mt-4">
+                                    <div class="flex text-yellow-400 mb-2">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <h3 class="font-semibold text-gray-800 group-hover:text-primary transition-colors duration-300">
+                                        HAJI BATCH 2 2026
+                                    </h3>
+                                    <div class="flex justify-between items-center mt-2">
+                                        <span class="text-sm text-gray-500">Mulai dari</span>
+                                        <span class="text-lg font-semibold text-primary">$20,500</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

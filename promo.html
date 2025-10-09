@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carousel Promo</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+  <!-- Tailwind Custom Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'Helvetica', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Base style */
+    body {
+      background-color: #f9fafb;
+    }
+
+    /* Carousel image styling */
+    .owl-carousel .mp-carousel-item img {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
+      border-radius: 1rem;
+      transition: transform 0.7s ease, box-shadow 0.7s ease;
+    }
+
+    .owl-carousel .mp-carousel-item:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Overlay gradient & title */
+    .mp-carousel-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      color: #fff;
+      border-radius: 1rem;
+    }
+
+    .mp-carousel-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Nav buttons */
+    .owl-nav button {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.3) !important;
+      color: #fff !important;
+      border-radius: 9999px !important;
+      width: 48px;
+      height: 48px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .owl-nav button:hover {
+      background: rgba(0, 0, 0, 0.6) !important;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .owl-nav .owl-prev { left: -5px; }
+    .owl-nav .owl-next { right: -5px; }
+
+    /* Dots */
+    .owl-dots {
+      margin-top: 20px;
+    }
+
+    .owl-dot span {
+      width: 12px !important;
+      height: 12px !important;
+      background: #d1d5db !important;
+      transition: all 0.3s ease;
+    }
+
+    .owl-dot.active span {
+      background: #C7A200 !important;
+      width: 16px !important;
+    }
+  </style>
+</head>
+
+<body class="font-poppins text-gray-800">
+
+  <!-- Section Title -->
+  <section class="max-w-6xl mx-auto px-4 pt-12 text-center">
+    <h2 class="text-2xl md:text-3xl font-semibold text-primary mb-2">Promo Umroh & Haji Terbaru</h2>
+    <p class="text-gray-600 mb-8">Dapatkan promo eksklusif untuk perjalanan ibadah Anda bersama <span class="font-semibold text-secondary">Namira Travel</span>.</p>
+  </section>
+
+  <!-- Carousel Section -->
+  <section class="max-w-full mx-auto px-4">
+    <div id="mp-carousel" class="owl-carousel">
+      
+      <a href="https://namira.travel/listings/umrah-08-november-2025-plus-city-tour-thaif-wopjbobay" title="UMRAH 08 NOVEMBER 2025">
+        <div class="mp-carousel-item relative">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/slide/pict/617/13_nov_newss.jpg" alt="UMRAH 08 NOVEMBER 2025">
+          <div class="mp-carousel-overlay">
+            <h3 class="mp-carousel-title">Umrah 08 November 2025</h3>
+            <span class="text-sm opacity-90">Plus City Tour Thaif</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://namira.travel/listings/umrah-22-november-2025-o7ok9ge6dw" title="UMRAH 22 NOVEMBER 2025">
+        <div class="mp-carousel-item relative">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/slide/pict/618/22_november_plus_thaif.jpg" alt="UMRAH 22 NOVEMBER 2025">
+          <div class="mp-carousel-overlay">
+            <h3 class="mp-carousel-title">Umrah 22 November 2025</h3>
+            <span class="text-sm opacity-90">Plus City Tour Thaif</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://namira.travel/listings/umrah-gold-13-desember-2025-xakgaplkgl" title="UMRAH GOLD 13 DESEMBER 2025">
+        <div class="mp-carousel-item relative">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/slide/pict/621/13_DES_SLIDE.jpg" alt="UMRAH GOLD 13 DESEMBER 2025">
+          <div class="mp-carousel-overlay">
+            <h3 class="mp-carousel-title">Umrah Gold 13 Desember 2025</h3>
+            <span class="text-sm opacity-90">Luxury Package</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://namira.travel/listings/umroh-gold-20-desember-2025-erxlooxk6x" title="UMROH GOLD 20 DESEMBER 2025">
+        <div class="mp-carousel-item relative">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/slide/pict/622/UMROH_GOLD_SLIDE.jpg" alt="UMROH GOLD 20 DESEMBER 2025">
+          <div class="mp-carousel-overlay">
+            <h3 class="mp-carousel-title">Umroh Gold 20 Desember 2025</h3>
+            <span class="text-sm opacity-90">Pilihan Premium</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://namira.travel/listings/umroh-20-desember-2025-melge3ybq" title="UMROH EKSEKUTIF 20 DESEMBER 2025">
+        <div class="mp-carousel-item relative">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/slide/pict/623/20_DESEMBER_EKSEKUTIF_SLIDE.jpg" alt="UMROH EKSEKUTIF 20 DESEMBER 2025">
+          <div class="mp-carousel-overlay">
+            <h3 class="mp-carousel-title">Umroh Eksekutif 20 Desember 2025</h3>
+            <span class="text-sm opacity-90">Paket Eksklusif</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://namira.travel/listings/paket-umroh-23-desember-special-liburan-akhir-tahun-pd4wgma4mw" title="UMROH 21 DESEMBER 2025">
+        <div class="mp-carousel-item relative">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/slide/pict/624/21_desember_slide.jpg" alt="UMROH 21 DESEMBER 2025">
+          <div class="mp-carousel-overlay">
+            <h3 class="mp-carousel-title">Umroh 21 Desember 2025</h3>
+            <span class="text-sm opacity-90">Liburan Akhir Tahun</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://namira.travel/listings/umroh-plus-turki-24-des-2025-city-tour-bursa-qjgzedxxro" title="UMROH PLUS TURKI 24 DES 2025">
+        <div class="mp-carousel-item relative">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/slide/pict/625/turki_slide.jpg" alt="UMROH PLUS TURKI 24 DES 2025">
+          <div class="mp-carousel-overlay">
+            <h3 class="mp-carousel-title">Umroh Plus Turki 24 Desember 2025</h3>
+            <span class="text-sm opacity-90">City Tour Bursa</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <!-- Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- Init Carousel -->
+  <script>
+    $(document).ready(function() {
+      $('#mp-carousel').owlCarousel({
+        loop: true,
+        margin: 20,
+        dots: true,
+        nav: true,
+        navText: [
+          "<i class='fa fa-chevron-left text-lg'></i>",
+          "<i class='fa fa-chevron-right text-lg'></i>"
+        ],
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        smartSpeed: 800,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          1024: { items: 3 }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

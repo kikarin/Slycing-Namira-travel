@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navbar</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'Helvetica', 'sans-serif'],
+          },
+          transitionTimingFunction: {
+            'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Smooth transition for sticky effect */
+    .navbar-blur {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.85);
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-poppins tracking-wide">
+  <!-- Top contact bar -->
+  <div class="bg-primary text-white text-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-2 flex-wrap gap-2">
+        
+        <!-- Left side: Phones -->
+        <div class="flex items-center gap-4 flex-wrap">
+          <ul class="flex items-center gap-3 flex-wrap">
+            <li class="flex items-center gap-2">
+              <i class="fa fa-phone text-secondary"></i>
+              <a href="tel:0817-141-529" class="hover:opacity-90 flex items-center gap-1">
+                <span>0817-141-529</span>
+              </a>
+            </li>
+            <li class="border-l border-white/30 h-4"></li>
+            <li class="flex items-center gap-2 pl-3">
+              <i class="fa fa-phone text-secondary"></i>
+              <a href="tel:0821-1047-4600" class="hover:opacity-90 flex items-center gap-1">
+                <span>0821-1047-4600</span>
+              </a>
+            </li>
+            <li class="border-l border-white/30 h-4"></li>
+            <li class="flex items-center gap-2 pl-3">
+              <i class="fa fa-phone text-secondary"></i>
+              <a href="tel:0821-1047-4300" class="hover:opacity-90 flex items-center gap-1">
+                <span>0821-1047-4300</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right side: Social icons -->
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-secondary transition transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:text-secondary transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-secondary transition transform hover:scale-110"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="bg-white shadow-md sticky top-0 z-50 transition-all">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-3">
+        <!-- Brand -->
+        <a href="#" class="flex items-center gap-3">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/site/logo/6/logo-namira-2023_300px.png"
+            alt="Logo" class="h-10 hover:opacity-90 transition" />
+        </a>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-8 ml-auto mr-6">
+          <a href="index.html" class="relative text-gray-700 hover:text-primary transition duration-300">
+            Beranda
+            <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <a href="#" class="text-gray-700 hover:text-primary transition">Tentang</a>
+          <a href="#" class="text-gray-700 hover:text-primary transition">Paket</a>
+          <a href="page_artikel.html" class="text-gray-700 hover:text-primary transition">Galeri & Artikel</a>
+          <a href="#" class="text-gray-700 hover:text-primary transition">Agen Resmi</a>
+        </nav>
+
+        <!-- Actions (desktop) -->
+        <div class="hidden md:flex items-center">
+          <a href="#"
+            class="px-5 py-2 bg-secondary text-white text-sm font-medium rounded-lg hover:brightness-110 transition duration-300 shadow-sm">Masuk</a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary transition">
+            <span class="sr-only">Buka menu</span>
+            <svg id="icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="icon-close" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
+      <div class="px-4 pt-4 pb-4 space-y-2">
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Beranda</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Tentang</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Paket</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Galeri & Artikel</a>
+        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Agen Resmi</a>
+
+        <div class="pt-2 border-t border-gray-100">
+          <a href="#"
+            class="mt-2 block w-full text-center px-4 py-2 rounded-md text-sm font-medium bg-secondary text-white hover:brightness-110 transition">Masuk</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    // Sticky navbar blur on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        navbar.classList.add('navbar-blur', 'shadow-lg');
+      } else {
+        navbar.classList.remove('navbar-blur', 'shadow-lg');
+      }
+    });
+
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const iconOpen = document.getElementById('icon-open');
+    const iconClose = document.getElementById('icon-close');
+
+    menuButton?.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', !isHidden);
+      menuButton.setAttribute('aria-expanded', String(isHidden));
+      iconOpen.classList.toggle('hidden', !isHidden);
+      iconClose.classList.toggle('hidden', isHidden);
+    });
+  </script>
+</body>
+</html>

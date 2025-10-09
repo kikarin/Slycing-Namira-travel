@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimoni Jamaah</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#00534D',
+            secondary: '#C7A200',
+          },
+          fontFamily: {
+            poppins: ['Poppins', 'Helvetica', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      width: 80px;
+      height: 4px;
+      background-color: #C7A200;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-poppins">
+
+  <!-- Section Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl lg:text-4xl font-bold text-primary section-title">
+        Testimoni Jamaah
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+        Cerita dan pengalaman dari para Jamaah yang telah mempercayakan perjalanan ibadah mereka bersama <span class="text-primary font-semibold">Namira Travel</span>.
+      </p>
+
+      <!-- Cards Grid -->
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-gray-50 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 text-left">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-14 h-14 rounded-full object-cover border-2 border-secondary">
+            <div>
+              <h3 class="font-semibold text-primary text-lg">Ahmad Fauzi</h3>
+              <div class="text-secondary text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">
+            “Alhamdulillah, pelayanan Namira Travel sangat memuaskan. Dari manasik hingga keberangkatan semua berjalan lancar dan sesuai syariat. Sangat direkomendasikan!”
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-gray-50 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 text-left">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Profile" class="w-14 h-14 rounded-full object-cover border-2 border-secondary">
+            <div>
+              <h3 class="font-semibold text-primary text-lg">Siti Rahmawati</h3>
+              <div class="text-secondary text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">
+            “Hotel dekat Masjidil Haram dan Muthawifnya sangat membantu jamaah. Saya merasa sangat diperhatikan dari awal hingga pulang ke tanah air.”
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-gray-50 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 p-6 text-left">
+          <div class="flex items-center gap-4 mb-4">
+            <img src="https://randomuser.me/api/portraits/men/66.jpg" alt="Profile" class="w-14 h-14 rounded-full object-cover border-2 border-secondary">
+            <div>
+              <h3 class="font-semibold text-primary text-lg">Hendra Kusuma</h3>
+              <div class="text-secondary text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">
+            “Program Umrah bersama Namira Travel sangat menyenangkan, bimbingan ibadahnya jelas dan sesuai sunnah. InsyaAllah saya akan daftar lagi tahun depan.”
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
