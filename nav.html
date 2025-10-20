@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Navbar</title>
+  <title>Navbar dengan Dropdown</title>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -30,20 +30,26 @@
           fontFamily: {
             poppins: ['Poppins', 'Helvetica', 'sans-serif'],
           },
-          transitionTimingFunction: {
-            'in-expo': 'cubic-bezier(0.95, 0.05, 0.795, 0.035)',
-          }
         }
       }
     }
   </script>
 
   <style>
-    /* Smooth transition for sticky effect */
     .navbar-blur {
       backdrop-filter: blur(10px);
       background-color: rgba(255, 255, 255, 0.85);
       transition: all 0.3s ease-in-out;
+    }
+
+    /* Hover transisi halus dropdown */
+    .dropdown-link {
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .dropdown-link:hover {
+      color: #00534D; /* warna primary */
+      background-color: rgba(0, 83, 77, 0.05);
     }
   </style>
 </head>
@@ -53,34 +59,25 @@
   <div class="bg-primary text-white text-sm">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-2 flex-wrap gap-2">
-        
-        <!-- Left side: Phones -->
         <div class="flex items-center gap-4 flex-wrap">
           <ul class="flex items-center gap-3 flex-wrap">
             <li class="flex items-center gap-2">
               <i class="fa fa-phone text-secondary"></i>
-              <a href="tel:0817-141-529" class="hover:opacity-90 flex items-center gap-1">
-                <span>0817-141-529</span>
-              </a>
+              <a href="tel:0817-141-529">0817-141-529</a>
             </li>
             <li class="border-l border-white/30 h-4"></li>
             <li class="flex items-center gap-2 pl-3">
               <i class="fa fa-phone text-secondary"></i>
-              <a href="tel:0821-1047-4600" class="hover:opacity-90 flex items-center gap-1">
-                <span>0821-1047-4600</span>
-              </a>
+              <a href="tel:0821-1047-4600">0821-1047-4600</a>
             </li>
             <li class="border-l border-white/30 h-4"></li>
             <li class="flex items-center gap-2 pl-3">
               <i class="fa fa-phone text-secondary"></i>
-              <a href="tel:0821-1047-4300" class="hover:opacity-90 flex items-center gap-1">
-                <span>0821-1047-4300</span>
-              </a>
+              <a href="tel:0821-1047-4300">0821-1047-4300</a>
             </li>
           </ul>
         </div>
 
-        <!-- Right side: Social icons -->
         <div class="flex items-center gap-4">
           <a href="#" class="hover:text-secondary transition transform hover:scale-110"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="hover:text-secondary transition transform hover:scale-110"><i class="fab fa-instagram"></i></a>
@@ -101,14 +98,45 @@
         </a>
 
         <!-- Desktop nav -->
-        <nav class="hidden md:flex items-center gap-8 ml-auto mr-6">
-          <a href="index.html" class="relative text-gray-700 hover:text-primary transition duration-300">
-            Beranda
-            <span class="absolute left-0 -bottom-1 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
-          </a>
-          <a href="#" class="text-gray-700 hover:text-primary transition">Tentang</a>
-          <a href="#" class="text-gray-700 hover:text-primary transition">Paket</a>
-          <a href="page_artikel.html" class="text-gray-700 hover:text-primary transition">Galeri & Artikel</a>
+        <nav class="hidden md:flex items-center gap-8 ml-auto mr-6 relative">
+          <a href="index.html" class="text-gray-700 hover:text-primary transition">Beranda</a>
+
+          <!-- Dropdown: Tentang -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-gray-700 hover:text-primary transition">
+              Tentang <i class="fa fa-chevron-down text-xs mt-[2px]"></i>
+            </button>
+            <div class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-lg border border-gray-100 w-44 py-2 z-50">
+              <a href="tentang-kami.html" class="block px-4 py-2 text-gray-700 dropdown-link">Tentang Kami</a>
+              <a href="cabang-kami.html" class="block px-4 py-2 text-gray-700 dropdown-link">Cabang Kami</a>
+              <a href="hubungi-kami.html" class="block px-4 py-2 text-gray-700 dropdown-link">Hubungi Kami</a>
+            </div>
+          </div>
+
+          <!-- Dropdown: Paket -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-gray-700 hover:text-primary transition">
+              Paket <i class="fa fa-chevron-down text-xs mt-[2px]"></i>
+            </button>
+            <div class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-lg border border-gray-100 w-44 py-2 z-50">
+              <a href="umroh.html" class="block px-4 py-2 text-gray-700 dropdown-link">Umroh</a>
+              <a href="haji.html" class="block px-4 py-2 text-gray-700 dropdown-link">Haji</a>
+              <a href="tabungan.html" class="block px-4 py-2 text-gray-700 dropdown-link">Tabungan</a>
+            </div>
+          </div>
+
+          <!-- Dropdown: Galeri & Artikel -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-gray-700 hover:text-primary transition">
+              Galeri & Artikel <i class="fa fa-chevron-down text-xs mt-[2px]"></i>
+            </button>
+            <div class="absolute left-0 top-full hidden group-hover:block bg-white shadow-lg rounded-lg border border-gray-100 w-48 py-2 z-50">
+              <a href="page_galeri.html" class="block px-4 py-2 text-gray-700 dropdown-link">Galeri</a>
+              <a href="testi.html" class="block px-4 py-2 text-gray-700 dropdown-link">Testimonial</a>
+              <a href="page_artikel.html" class="block px-4 py-2 text-gray-700 dropdown-link">Artikel</a>
+            </div>
+          </div>
+
           <a href="#" class="text-gray-700 hover:text-primary transition">Agen Resmi</a>
         </nav>
 
@@ -120,9 +148,8 @@
 
         <!-- Mobile menu button -->
         <div class="md:hidden">
-          <button id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu"
-            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-primary transition">
-            <span class="sr-only">Buka menu</span>
+          <button id="mobile-menu-button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:ring-2 focus:ring-primary">
             <svg id="icon-open" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
               viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -141,29 +168,60 @@
     <!-- Mobile menu -->
     <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
       <div class="px-4 pt-4 pb-4 space-y-2">
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Beranda</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Tentang</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Paket</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Galeri & Artikel</a>
-        <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Agen Resmi</a>
+        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50">Beranda</a>
+
+        <!-- Dropdown (Mobile) Tentang -->
+        <div>
+          <button class="w-full flex justify-between items-center px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 dropdown-btn">
+            Tentang <i class="fa fa-chevron-down text-xs transition-transform"></i>
+          </button>
+          <div class="hidden ml-4 border-l border-gray-200 pl-3 dropdown-content">
+            <a href="tentang-kami.html" class="block py-2 text-gray-600 hover:text-primary">Tentang Kami</a>
+            <a href="cabang-kami.html" class="block py-2 text-gray-600 hover:text-primary">Cabang Kami</a>
+            <a href="hubungi-kami.html" class="block py-2 text-gray-600 hover:text-primary">Hubungi Kami</a>
+          </div>
+        </div>
+
+        <!-- Dropdown (Mobile) Paket -->
+        <div>
+          <button class="w-full flex justify-between items-center px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 dropdown-btn">
+            Paket <i class="fa fa-chevron-down text-xs transition-transform"></i>
+          </button>
+          <div class="hidden ml-4 border-l border-gray-200 pl-3 dropdown-content">
+            <a href="umroh.html" class="block py-2 text-gray-600 hover:text-primary">Umroh</a>
+            <a href="haji.html" class="block py-2 text-gray-600 hover:text-primary">Haji</a>
+            <a href="tabungan.html" class="block py-2 text-gray-600 hover:text-primary">Tabungan</a>
+          </div>
+        </div>
+
+        <!-- Dropdown (Mobile) Galeri & Artikel -->
+        <div>
+          <button class="w-full flex justify-between items-center px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50 dropdown-btn">
+            Galeri & Artikel <i class="fa fa-chevron-down text-xs transition-transform"></i>
+          </button>
+          <div class="hidden ml-4 border-l border-gray-200 pl-3 dropdown-content">
+            <a href="page_galeri.html" class="block py-2 text-gray-600 hover:text-primary">Galeri</a>
+            <a href="testi.html" class="block py-2 text-gray-600 hover:text-primary">Testimonial</a>
+            <a href="page_artikel.html" class="block py-2 text-gray-600 hover:text-primary">Artikel</a>
+          </div>
+        </div>
+
+        <a href="#" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-gray-50">Agen Resmi</a>
 
         <div class="pt-2 border-t border-gray-100">
           <a href="#"
-            class="mt-2 block w-full text-center px-4 py-2 rounded-md text-sm font-medium bg-secondary text-white hover:brightness-110 transition">Masuk</a>
+            class="mt-2 block w-full text-center px-4 py-2 rounded-md text-sm font-medium bg-secondary text-white hover:brightness-110">Masuk</a>
         </div>
       </div>
     </div>
   </header>
 
   <script>
-    // Sticky navbar blur on scroll
+    // Sticky navbar blur
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        navbar.classList.add('navbar-blur', 'shadow-lg');
-      } else {
-        navbar.classList.remove('navbar-blur', 'shadow-lg');
-      }
+      if (window.scrollY > 10) navbar.classList.add('navbar-blur');
+      else navbar.classList.remove('navbar-blur');
     });
 
     // Mobile menu toggle
@@ -172,12 +230,19 @@
     const iconOpen = document.getElementById('icon-open');
     const iconClose = document.getElementById('icon-close');
 
-    menuButton?.addEventListener('click', () => {
-      const isHidden = mobileMenu.classList.contains('hidden');
-      mobileMenu.classList.toggle('hidden', !isHidden);
-      menuButton.setAttribute('aria-expanded', String(isHidden));
-      iconOpen.classList.toggle('hidden', !isHidden);
-      iconClose.classList.toggle('hidden', isHidden);
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+
+    // Semua dropdown mobile
+    document.querySelectorAll('.dropdown-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        content.classList.toggle('hidden');
+        btn.querySelector('i').classList.toggle('rotate-180');
+      });
     });
   </script>
 </body>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cabang Kami Content</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00534D',
+                        secondary: '#C7A200',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-poppins bg-white text-gray-800">
+    <!-- Hero Section with Parallax -->
+    <section class="relative h-72 md:h-96 bg-contain bg-center bg-no-repeat bg-fixed" 
+             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/899/bg-profil-bs-travel.jpg')">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 animate-fadeInUp">Cabang Kami</h1>
+                <p class="text-lg text-white opacity-90">Namira Travel tersebar di berbagai daerah. Hubungi Namira Travel terdekat sekarang!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container max-w-6xl mx-auto px-4 py-16">
+        <div class="flex flex-wrap lg:flex-nowrap gap-8">
+            <!-- Main Content Column -->
+            <div class="w-full lg:w-full">
+                <!-- Office Info Section -->
+                <div class="mb-12 animate-fadeInUp">
+                    <div class="flex flex-col md:flex-row">
+                        <div class=" flex justify-center items-center">
+                        </div>
+                        <div class="w-full">
+                            <h1 class="text-2xl font-bold mb-4 text-primary">
+                                Kantor <span class="text-secondary">Namira Travel</span>
+                            </h1>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <i class="fa fa-map-marker text-secondary mr-3 mt-1"></i>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Jl. Profesor Doktor Soeharso No. 13, RT. 001 RW. 004, Kelurahan Jajar, Kecamatan Laweyan, Kota Surakarta, Provinsi Jawa Tengah
+                                    </p>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa fa-map-marker text-secondary mr-3 mt-1"></i>
+                                    <p class="text-gray-700 leading-relaxed">
+                                        Jl. Raya Radar Auri No. 12-14 (Patokan Pombensin Kec. Cimanggis), Mekarsari, Cimanggis, Depok
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branch List Section -->
+                <div class="mb-12 animate-fadeInUp">
+                    <h2 class="text-2xl font-bold text-center mb-8 text-primary">
+                        Daftar <span class="text-secondary">Cabang Kami</span>
+                    </h2>
+                    
+                    <div class="space-y-6">
+                        <!-- Cabang Solo -->
+                        <div id="cabang-solo" class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="true">
+                                <h3 class="text-xl font-bold flex items-center">
+                                    <i class="fa fa-minus mr-2"></i>
+                                    Cabang Solo
+                                </h3>
+                            </div>
+                            <div class="p-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="flex items-start mb-4">
+                                            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+                                            <div>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    Jl. Bone Barat 3 No.19, Banyuanyar, Kec. Banjarsari, Kota Surakarta, Jawa Tengah 57137
+                                                </p>
+                                                <iframe 
+                                                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15821.28846608324!2d110.8094313!3d-7.5398053!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd276828a23923f90!2sNamira%20Travel%20Cabang%20Solo!5e0!3m2!1sid!2sid!4v1644895550160!5m2!1sid!2sid" 
+                                                    width="100%" 
+                                                    height="200" 
+                                                    style="border:0;" 
+                                                    allowfullscreen="" 
+                                                    loading="lazy">
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-primary mb-3">Kontak Kami</h5>
+                                        <ul class="space-y-2 mb-4">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                                <a href="tel:+6281227005177" class="text-gray-700 hover:text-primary">0812 2700 5177</a>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                                <a href="tel:+62271724524" class="text-gray-700 hover:text-primary">0271 724 524</a>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-envelope text-secondary mr-3"></i>
+                                                <a href="#" class="text-gray-700 hover:text-primary">namiratravelsolo [at] gmail.com</a>
+                                            </li>
+                                        </ul>
+                                        <h5 class="font-bold text-primary mb-3">Ikuti Kami</h5>
+                                        <div class="flex space-x-3">
+                                            <a href="https://solo.namira.travel/" target="_blank" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                                                <i class="fa fa-home"></i>
+                                            </a>
+                                            <a href="https://facebook.com/namiratravelsolo" target="_blank" class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                            <a href="https://instagram.com/namiratravelsolo" target="_blank" class="w-8 h-8 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cabang Semarang -->
+                        <div id="cabang-semarang" class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
+                                <h3 class="text-xl font-bold flex items-center">
+                                    <i class="fa fa-plus mr-2"></i>
+                                    Cabang Semarang
+                                </h3>
+                            </div>
+                            <div class="p-6 hidden">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="flex items-start mb-4">
+                                            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+                                            <div>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    Jalan Prof. Soedarto, Ruko A No 1, Tembalang, Tembalang, Kec. Tembalang, Kota Semarang, Jawa Tengah 50725
+                                                </p>
+                                                <iframe 
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.6215344472243!2d110.4305584!3d-7.053679499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708c02fba14bff%3A0xf7d755fffdc93d57!2sToko%20Buku%20Semarang%20Al-Manshuroh%20Agency!5e0!3m2!1sen!2sid!4v1684143600129!5m2!1sen!2sid" 
+                                                    width="100%" 
+                                                    height="200" 
+                                                    style="border:0;" 
+                                                    allowfullscreen="" 
+                                                    loading="lazy">
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-primary mb-3">Kontak Kami</h5>
+                                        <ul class="space-y-2 mb-4">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                                <a href="tel:+628536313006" class="text-gray-700 hover:text-primary">0853-2631-3006</a>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                                <a href="tel:+6281229176360" class="text-gray-700 hover:text-primary">0812-2917-6360</a>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-envelope text-secondary mr-3"></i>
+                                                <a href="#" class="text-gray-700 hover:text-primary">namiratravelsemarang@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                        <h5 class="font-bold text-primary mb-3">Ikuti Kami</h5>
+                                        <div class="flex space-x-3">
+                                            <a href="https://semarang.namira.travel/" target="_blank" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                                                <i class="fa fa-home"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cabang Majalengka -->
+                        <div id="cabang-majalengka" class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
+                                <h3 class="text-xl font-bold flex items-center">
+                                    <i class="fa fa-plus mr-2"></i>
+                                    Cabang Majalengka
+                                </h3>
+                            </div>
+                            <div class="p-6 hidden">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="flex items-start mb-4">
+                                            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+                                            <div>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    Jl. Gerakan Koperasi No. 03, Kel. Majalengka Wetan, Kec. Majalengka, Kab. Majalengka, Jawa Barat 45411
+                                                </p>
+                                                <iframe 
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.415004360439!2d108.2407952!3d-6.8407477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f254fb3441a5f%3A0xd08f964571d03327!2sJl.%20Gerakan%20Koperasi%20No.3%2C%20Majalengka%20Wetan%2C%20Kec.%20Majalengka%2C%20Kabupaten%20Majalengka%2C%20Jawa%20Barat%2045411%2C%20Indonesia!5e0!3m2!1sen!2sjp!4v1682932133207!5m2!1sen!2sjp" 
+                                                    width="100%" 
+                                                    height="200" 
+                                                    style="border:0;" 
+                                                    allowfullscreen="" 
+                                                    loading="lazy">
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-primary mb-3">Kontak Kami</h5>
+                                        <ul class="space-y-2 mb-4">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                                <a href="tel:+6281324003885" class="text-gray-700 hover:text-primary">0813-2400-3885</a>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-envelope text-secondary mr-3"></i>
+                                                <a href="#" class="text-gray-700 hover:text-primary">namiratravelmajalengka@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                        <h5 class="font-bold text-primary mb-3">Ikuti Kami</h5>
+                                        <div class="flex space-x-3">
+                                            <a href="https://majalengka.namira.travel/" target="_blank" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                                                <i class="fa fa-home"></i>
+                                            </a>
+                                            <a href="https://www.instagram.com/namiramajalengka/" target="_blank" class="w-8 h-8 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cabang Cianjur -->
+                        <div id="cabang-cianjur" class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
+                                <h3 class="text-xl font-bold flex items-center">
+                                    <i class="fa fa-plus mr-2"></i>
+                                    Cabang Cianjur
+                                </h3>
+                            </div>
+                            <div class="p-6 hidden">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="flex items-start mb-4">
+                                            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+                                            <div>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    Ruko Belka, Jl. KH Abdullah Bin Nuh No.4, RT.01/RW.19, Pamoyanan, Kec. Cianjur, Kabupaten Cianjur, Jawa Barat 43211
+                                                </p>
+                                                <iframe 
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.5995040785956!2d107.1294795!3d-6.818467399999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6bc2dda92e3d5f93%3A0xbe18f9205caef370!2sNamira%20Travel%20Umroh%20%26%20Haji%20Cabang%20Cianjur!5e0!3m2!1sen!2sid!4v1724646847599!5m2!1sen!2sid" 
+                                                    width="100%" 
+                                                    height="200" 
+                                                    style="border:0;" 
+                                                    allowfullscreen="" 
+                                                    loading="lazy">
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-primary mb-3">Kontak Kami</h5>
+                                        <ul class="space-y-2 mb-4">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                                <a href="tel:+6285186897400" class="text-gray-700 hover:text-primary">0851-8689-7400</a>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-envelope text-secondary mr-3"></i>
+                                                <a href="#" class="text-gray-700 hover:text-primary">namiratravelcianjur@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                        <h5 class="font-bold text-primary mb-3">Ikuti Kami</h5>
+                                        <div class="flex space-x-3">
+                                            <a href="https://cianjur.namira.travel/" target="_blank" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                                                <i class="fa fa-home"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cabang Tuban -->
+                        <div id="cabang-tuban" class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
+                                <h3 class="text-xl font-bold flex items-center">
+                                    <i class="fa fa-plus mr-2"></i>
+                                    Cabang Tuban
+                                </h3>
+                            </div>
+                            <div class="p-6 hidden">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="flex items-start mb-4">
+                                            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+                                            <div>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    Jl Raya Bulu - Jatirogo No. 355, Sukolilo, Bancar, Tuban, Jawa Timur 62354
+                                                </p>
+                                                <iframe 
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.9393342868443!2d111.7121057!3d-6.777238499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e770fc19c18498b%3A0xb38a0d4f6b5ee90e!2sNAMIRA%20TRAVEL!5e0!3m2!1sen!2sid!4v1724647138541!5m2!1sen!2sid" 
+                                                    width="100%" 
+                                                    height="200" 
+                                                    style="border:0;" 
+                                                    allowfullscreen="" 
+                                                    loading="lazy">
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-primary mb-3">Kontak Kami</h5>
+                                        <ul class="space-y-2 mb-4">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                                <a href="tel:+6281231414497" class="text-gray-700 hover:text-primary">0812 3141 4497</a>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-envelope text-secondary mr-3"></i>
+                                                <a href="#" class="text-gray-700 hover:text-primary">namiratraveltuban@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                        <h5 class="font-bold text-primary mb-3">Ikuti Kami</h5>
+                                        <div class="flex space-x-3">
+                                            <a href="https://tuban.namira.travel/" target="_blank" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                                                <i class="fa fa-home"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cabang Surabaya -->
+                        <div id="cabang-surabaya" class="border border-gray-200 rounded-lg overflow-hidden">
+                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
+                                <h3 class="text-xl font-bold flex items-center">
+                                    <i class="fa fa-plus mr-2"></i>
+                                    Cabang Surabaya
+                                </h3>
+                            </div>
+                            <div class="p-6 hidden">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <div class="flex items-start mb-4">
+                                            <i class="fa fa-map-marker text-primary mr-3 mt-1"></i>
+                                            <div>
+                                                <p class="text-gray-700 leading-relaxed">
+                                                    Jl. Siwalankerto No. 27, Kelurahan Siwalankerto, Kecamatan Wonocolo, Kota Surabaya, Jawa Timur
+                                                </p>
+                                                <iframe 
+                                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.1454522915437!2d112.7315296!3d-7.3375575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb730ae0ace5%3A0x4f52abca3a5b2635!2sNamira%20Travel%20Umroh%20%26%20Haji%20Cabang%20Surabaya!5e0!3m2!1sen!2sid!4v1724647660082!5m2!1sen!2sid" 
+                                                    width="100%" 
+                                                    height="200" 
+                                                    style="border:0;" 
+                                                    allowfullscreen="" 
+                                                    loading="lazy">
+                                                </iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-bold text-primary mb-3">Kontak Kami</h5>
+                                        <ul class="space-y-2 mb-4">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-phone text-secondary mr-3"></i>
+                                                <a href="tel:+6285819855486" class="text-gray-700 hover:text-primary">0858 1985 5486</a>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-envelope text-secondary mr-3"></i>
+                                                <a href="#" class="text-gray-700 hover:text-primary">namiratravelsurabaya@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                        <h5 class="font-bold text-primary mb-3">Ikuti Kami</h5>
+                                        <div class="flex space-x-3">
+                                            <a href="https://surabaya.namira.travel/" target="_blank" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                                                <i class="fa fa-home"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript untuk accordion functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.bg-primary');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const wrapper = this.parentElement;
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    const willOpen = content.classList.contains('hidden');
+                    // Close all other accordions
+                    document.querySelectorAll('.p-6').forEach(item => item.classList.add('hidden'));
+                    document.querySelectorAll('.bg-primary[aria-expanded] i').forEach(item => { item.classList.remove('fa-minus'); item.classList.add('fa-plus'); });
+                    document.querySelectorAll('.bg-primary[aria-expanded]').forEach(h => h.setAttribute('aria-expanded', 'false'));
+
+                    if (willOpen) {
+                        content.classList.remove('hidden');
+                        icon.classList.remove('fa-plus');
+                        icon.classList.add('fa-minus');
+                        this.setAttribute('aria-expanded', 'true');
+                        // Update hash without jumping if different
+                        if (wrapper.id) {
+                            history.replaceState(null, '', `#${wrapper.id}`);
+                        }
+                    } else {
+                        content.classList.add('hidden');
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-plus');
+                        this.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            // Open by hash if present
+            const openByHash = () => {
+                const hash = location.hash.replace('#','');
+                if (!hash) return;
+                const section = document.getElementById(hash);
+                if (!section) return;
+                const header = section.querySelector('.bg-primary');
+                const content = header && header.nextElementSibling;
+                const icon = header && header.querySelector('i');
+                if (header && content && icon) {
+                    document.querySelectorAll('.p-6').forEach(item => item.classList.add('hidden'));
+                    document.querySelectorAll('.bg-primary[aria-expanded] i').forEach(item => { item.classList.remove('fa-minus'); item.classList.add('fa-plus'); });
+                    document.querySelectorAll('.bg-primary[aria-expanded]').forEach(h => h.setAttribute('aria-expanded', 'false'));
+                    content.classList.remove('hidden');
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                    header.setAttribute('aria-expanded', 'true');
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            };
+
+            openByHash();
+            window.addEventListener('hashchange', openByHash);
+        });
+    </script>
+</body>
+</html>

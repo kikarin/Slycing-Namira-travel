@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Paket Umroh</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#00534D', secondary: '#C7A200' },
+                    fontFamily: { poppins: ['Poppins','sans-serif'] },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-poppins bg-white text-gray-800">
+    <!-- Hero Section with Parallax (konsisten) -->
+    <section class="relative h-72 md:h-96 bg-contain bg-center bg-no-repeat bg-fixed" 
+             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://storage.googleapis.com/muslimpergi/uploads/site/background/6/BANNER_WEB_4700x1740px.webp')">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Paket Umroh</h1>
+                <p class="text-lg text-white opacity-90">Biaya transparan, jadwal terbaru, dan bimbingan sesuai sunnah</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter + Grid -->
+    <div class="container max-w-6xl mx-auto px-4 py-10">
+        <!-- Filter Bar -->
+        <form id="listingFilterForm" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+                <div class="md:col-span-4">
+                    <div class="relative">
+                        <input id="searchListing" type="text" placeholder="Paket Umroh" class="w-full border rounded-lg px-4 py-2 pr-9" />
+                        <i class="fa fa-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="md:col-span-4">
+                    <div class="relative">
+                        <i class="fa fa-calendar absolute left-3 top-1/2 -translate-y-1/2 text-secondary"></i>
+                        <select id="departureAtSelect" class="w-full border rounded-lg pl-9 pr-3 py-2">
+                            <option value="" selected>Waktu Keberangkatan</option>
+                            <option value="112025">November 2025</option>
+                            <option value="122025">December 2025</option>
+                            <option value="012026">January 2026</option>
+                            <option value="022026">February 2026</option>
+                            <option value="032026">March 2026</option>
+                            <option value="122030">December 2030</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <button type="submit" class="w-full bg-primary text-white font-semibold rounded-lg py-2">Cari</button>
+                </div>
+                <div class="md:col-span-2">
+                    <a href="#" id="resetFilters" class="w-full inline-flex items-center justify-center bg-secondary text-white font-semibold rounded-lg py-2">
+                        <i class="fa fa-rotate-left mr-2"></i>Reset
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="relative">
+                    <i class="fa fa-paper-plane absolute left-3 top-1/2 -translate-y-1/2 text-secondary"></i>
+                    <select id="departureFromSelect" class="w-full border rounded-lg pl-9 pr-3 py-2">
+                        <option value="" selected>Lokasi Keberangkatan</option>
+                        <option value="JAKARTA">JAKARTA</option>
+                    </select>
+                </div>
+                <div class="relative">
+                    <i class="fa fa-money-bill absolute left-3 top-1/2 -translate-y-1/2 text-secondary"></i>
+                    <select id="pricingListSelect" class="w-full border rounded-lg pl-9 pr-3 py-2">
+                        <option value="" selected>Biaya Umroh</option>
+                        <option value="26..46">26jt - 46jt</option>
+                        <option value="46..66">46jt - 66jt</option>
+                        <option value="106..126">106jt - 126jt</option>
+                    </select>
+                </div>
+                <div class="relative">
+                    <i class="fa fa-hotel absolute left-3 top-1/2 -translate-y-1/2 text-secondary"></i>
+                    <select id="hotelSelect" class="w-full border rounded-lg pl-9 pr-3 py-2">
+                        <option value="" selected>Hotel</option>
+                        <option value="5">Bintang 5</option>
+                        <option value="4">Bintang 4</option>
+                        <option value="3">Bintang 3</option>
+                    </select>
+                </div>
+                <div class="relative">
+                    <i class="fa fa-clock absolute left-3 top-1/2 -translate-y-1/2 text-secondary"></i>
+                    <select id="durationSelect" class="w-full border rounded-lg pl-9 pr-3 py-2">
+                        <option value="" selected>Durasi</option>
+                        <option value="9">9 hari</option>
+                        <option value="12">12 hari</option>
+                        <option value="17">17 hari</option>
+                        <option value="18">18 hari</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+        <!-- Grid Paket (port dari kode Anda) -->
+        <div class="mt-10" id="grid-container">
+            <!-- Container bootstrap diganti utilitas Tailwind agar konsisten -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="listings_package">
+                <!-- Grid diisi statis sesuai contoh yang Anda berikan agar identik -->
+                
+                <!-- Item 1 -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/6642/medium_13_nov_ust_fuad.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umrah-08-november-2025-plus-city-tour-thaif-wopjbobayl">UMRAH 13 NOVEMBER 2025 (FREE CITY TOUR THAIF)</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp28.500.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">13 November 2025, 13:10</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">9 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">45 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">0 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/6643/medium_flayer_umroh_novembers.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umrah-22-november-2025-o7ok9ge6dw"> UMRAH 22 NOVEMBER 2025 (PLUS CITY TOUR THAIF)</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp27.700.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">22 November 2025, 13:14</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">9 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">29 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">0 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="/listings/umrah-22-november-2025-o7ok9ge6dw" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <!-- Item 3 (Plus Turki) -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7146/medium_turki_agen.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umroh-plus-turki-24-des-2025-city-tour-bursa-qjgzedxxro">PAKET UMROH GOLD TENGAH RAMADHAN 27 FEBRUARI 2026</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp49.900.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">20 December 2025, 11:32</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">12 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">40 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">25 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="/listings/umroh-plus-turki-24-des-2025-city-tour-bursa-qjgzedxxro" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+                <!-- Item 1 -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/6642/medium_13_nov_ust_fuad.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umrah-08-november-2025-plus-city-tour-thaif-wopjbobayl">UMRAH 13 NOVEMBER 2025 (FREE CITY TOUR THAIF)</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp28.500.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">13 November 2025, 13:10</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">9 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">45 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">0 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/6643/medium_flayer_umroh_novembers.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umrah-22-november-2025-o7ok9ge6dw"> UMRAH 22 NOVEMBER 2025 (PLUS CITY TOUR THAIF)</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp27.700.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">22 November 2025, 13:14</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">9 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">29 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">0 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="/listings/umrah-22-november-2025-o7ok9ge6dw" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <!-- Item 3 (Plus Turki) -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7146/medium_turki_agen.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umroh-plus-turki-24-des-2025-city-tour-bursa-qjgzedxxro">PAKET UMROH GOLD TENGAH RAMADHAN 27 FEBRUARI 2026</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp49.900.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">20 December 2025, 11:32</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">12 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">40 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">25 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="/listings/umroh-plus-turki-24-des-2025-city-tour-bursa-qjgzedxxro" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+                <!-- Item 1 -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/6642/medium_13_nov_ust_fuad.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umrah-08-november-2025-plus-city-tour-thaif-wopjbobayl">UMRAH 13 NOVEMBER 2025 (FREE CITY TOUR THAIF)</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp28.500.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">13 November 2025, 13:10</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">9 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">45 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">0 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/6643/medium_flayer_umroh_novembers.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umrah-22-november-2025-o7ok9ge6dw"> UMRAH 22 NOVEMBER 2025 (PLUS CITY TOUR THAIF)</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp27.700.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">22 November 2025, 13:14</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">9 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">29 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">0 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="/listings/umrah-22-november-2025-o7ok9ge6dw" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+
+                <!-- Item 3 (Plus Turki) -->
+                <div class="border rounded-xl overflow-hidden shadow">
+                    <figure class="relative">
+                        <img src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/7146/medium_turki_agen.jpg" class="w-full h-56 object-cover" alt="">
+                        <small class="absolute top-2 left-2 bg-secondary text-white text-xs px-2 py-1 rounded">UMROH</small>
+                    </figure>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-primary leading-snug mb-2"><a href="/listings/umroh-plus-turki-24-des-2025-city-tour-bursa-qjgzedxxro">PAKET UMROH GOLD TENGAH RAMADHAN 27 FEBRUARI 2026</a></h3>
+                        <div class="mb-3">
+                            <p class="font-bold">Rp49.900.000,- <span class="text-sm font-normal">/pax</span></p>
+                            <p class="text-sm text-gray-600">QUAD</p>
+                        </div>
+                        <table class="w-full text-sm">
+                            <tbody>
+                                <tr><td class="py-1 w-5"><i class="fa fa-calendar"></i></td><td class="py-1">Jadwal Berangkat</td><td class="py-1">20 December 2025, 11:32</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-clock"></i></td><td class="py-1">Durasi</td><td class="py-1">12 Hari</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-building"></i></td><td class="py-1">Kelas Hotel</td><td class="py-1"><span class="text-yellow-400"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></span></td></tr>
+                                <tr><td class="py-1"><i class="fa fa-users"></i></td><td class="py-1">Total Seat</td><td class="py-1">40 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-check-circle"></i></td><td class="py-1 font-semibold">Available</td><td class="py-1 font-semibold">25 pax</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-map-marker"></i></td><td class="py-1">Berangkat dari</td><td class="py-1">JAKARTA</td></tr>
+                                <tr><td class="py-1"><i class="fa fa-plane"></i></td><td class="py-1">Maskapai</td><td class="py-1"></td></tr>
+                            </tbody>
+                        </table>
+                        <a href="/listings/umroh-plus-turki-24-des-2025-city-tour-bursa-qjgzedxxro" class="mt-4 inline-block w-full text-center bg-primary text-white font-semibold py-2 rounded-full">Lihat Detail</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('listingFilterForm');
+            const departureAtSelect = document.getElementById('departureAtSelect');
+            const departureFromSelect = document.getElementById('departureFromSelect');
+            const pricingListSelect = document.getElementById('pricingListSelect');
+            const durationSelect = document.getElementById('durationSelect');
+            const hotelSelect = document.getElementById('hotelSelect');
+            const searchInput = document.getElementById('searchListing');
+            const resetBtn = document.getElementById('resetFilters');
+
+            const updateInputValue = (selectElement) => {
+                const selectedOption = selectElement.options[selectElement.selectedIndex];
+                if (selectedOption.value !== "") {
+                    const defaultOption = selectElement.querySelector('option[value=""]');
+                    if (defaultOption) defaultOption.remove();
+                }
+            };
+
+            [departureAtSelect, departureFromSelect, pricingListSelect, durationSelect, hotelSelect]
+                .forEach(sel => sel.addEventListener('change', () => updateInputValue(sel)));
+
+            form.addEventListener('submit', function(event) {
+                const buildHidden = (el, name) => {
+                    const value = el.options[el.selectedIndex].value;
+                    form.querySelectorAll(`input[name="${name}[]"]`).forEach(n => n.remove());
+                    if (value) {
+                        const hidden = document.createElement('input');
+                        hidden.type = 'hidden'; hidden.name = `${name}[]`; hidden.value = value; form.appendChild(hidden);
+                    }
+                };
+
+                buildHidden(departureAtSelect, 'da');
+                buildHidden(departureFromSelect, 'df');
+                buildHidden(pricingListSelect, 'pr');
+                buildHidden(hotelSelect, 'ho');
+                buildHidden(durationSelect, 'd');
+
+                const q = (searchInput.value || '').trim();
+                if (q) {
+                    const usp = new URLSearchParams(window.location.search);
+                    usp.set('search', q);
+                    window.location.search = usp.toString();
+                    event.preventDefault();
+                }
+            });
+
+            // Populate search from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchParam = urlParams.get('search');
+            if (searchParam) searchInput.value = decodeURIComponent(searchParam);
+
+            // Reset
+            resetBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = window.location.pathname;
+            });
+        });
+    </script>
+</body>
+</html>
+
+

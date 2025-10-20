@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabungan Umrah</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script>
+        tailwind.config = { theme: { extend: { colors: { primary: '#00534D', secondary: '#C7A200' }, fontFamily: { poppins: ['Poppins','sans-serif'] } } } };
+    </script>
+</head>
+
+<body class="font-poppins bg-white text-gray-800">
+    <!-- Hero -->
+    <section class="relative h-72 md:h-96 bg-contain bg-center bg-no-repeat bg-fixed" 
+             style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://storage.googleapis.com/muslimpergi/uploads/site/background2/6/namira-banner-header.jpeg')">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="container mx-auto px-4 h-full flex items-center justify-center relative z-10">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">Tabungan Umrah</h1>
+                <p class="text-lg text-white opacity-90">Setoran fleksibel, aman, dan transparan</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Konten Utama -->
+    <div class="container max-w-6xl mx-auto px-4 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Kiri: Deskripsi -->
+            <div class="lg:col-span-2">
+                <div class="mb-6">
+                    <img class="w-full rounded" alt="TABUNGAN UMRAH" title="TABUNGAN UMRAH" src="https://storage.googleapis.com/muslimpergi/uploads/listing/pict/1175/tabungan_umroh_tanpa_nomor.png">
+                </div>
+
+                <div class="space-y-6 text-gray-700">
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Cara Pendaftaran Tabungan Umroh</h3>
+                        <ol class="list-decimal pl-5 space-y-1">
+                            <li>Menghubungi Customer Service Namira Travel</li>
+                            <li>Mengisi Pendaftaran Tabungan Umroh melalui aplikasi Namira Travel</li>
+                            <li>Lengkapi data diri dan nominal yang ingin ditabung</li>
+                            <li>Upload bukti transfer di dalam aplikasi</li>
+                            <li>Pembayaran diverifikasi oleh Finance Namira Travel</li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Syarat & Ketentuan</h3>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Setoran 100 Ribu sudah termasuk booking seat</li>
+                            <li>Cicilan sesuai kemampuan</li>
+                            <li>H-45 dana sudah masuk ± 50%</li>
+                            <li>H-30 sudah masuk pelunasan paket</li>
+                            <li>Pembatalan paket/pindah paket maksimal H-60 (tanpa biaya admin)</li>
+                            <li>Pembatalan H-30 dikenakan biaya admin Rp4.000.000</li>
+                            <li>WAJIB mendownload aplikasi Namira Travel</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-primary mb-2">Keunggulan</h3>
+                        <ul class="list-disc pl-5">
+                            <li>Setoran sesuai yang Anda mau</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kanan: Sidebar Paket & Info -->
+            <aside>
+                <div class="border rounded-xl p-5 shadow mb-6">
+                    <h2 class="text-xl font-semibold mb-4 text-primary">Harga Paket</h2>
+                    <div class="mb-4">
+                        <p class="text-sm text-gray-600">Mulai dari</p>
+                        <p class="text-2xl font-bold">Rp29.550.000,-</p>
+                        <p class="text-sm">[QUAD] Variant Tabungan 01</p>
+                    </div>
+                    <a id="bookingBtn" href="#" class="block text-center bg-primary text-white font-semibold py-2 rounded"><i class="fa fa-plane mr-2"></i>Booking</a>
+                    <div class="grid grid-cols-2 gap-3 mt-3">
+                        <a id="chatWaListing" href="https://wa.me/6282110474300?text=Assalamualaikum%20*Namira%20Travel*%0ASaya%20ingin%20mendaftar%20TABUNGAN%20UMRAH" target="_blank" class="text-center bg-green-500 text-white py-2 rounded"><i class="fa fa-whatsapp mr-1"></i>Tanya CS</a>
+                        <a href="https://namira.travel/app_v2/#/file/print/tourpack?listing_id=tabungan-umrah-9p3vjp41wo" target="_blank" class="text-center bg-secondary text-white py-2 rounded"><i class="fa fa-print mr-1"></i>Print Paket</a>
+                    </div>
+                </div>
+
+                <div class="border rounded-xl p-5 shadow">
+                    <h2 class="text-xl font-semibold mb-4 text-primary">Informasi Travel</h2>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start"><i class="fa fa-building text-secondary mr-3 mt-1"></i><div><p class="font-medium">Nama Perusahaan</p><p>PT. NAMIRA</p></div></li>
+                        <li class="flex items-start"><i class="fa fa-phone text-secondary mr-3 mt-1"></i><div><p class="font-medium">Nomor Telepon</p><p>082110474300</p></div></li>
+                        <li class="flex items-start"><i class="fa fa-envelope text-secondary mr-3 mt-1"></i><div><p class="font-medium">Alamat Email</p><p><span>namiratourntravel@gmail.com</span></p></div></li>
+                        <li class="flex items-start"><i class="fa fa-bookmark text-secondary mr-3 mt-1"></i><div><p class="font-medium">Nomor SK Umroh</p><p>-</p></div></li>
+                        <li class="flex items-start"><i class="fa fa-bookmark text-secondary mr-3 mt-1"></i><div><p class="font-medium">Nomor SK Haji</p><p>-</p></div></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const bookingBtn = document.getElementById('bookingBtn');
+            const closeAt = new Date('2030-12-31T09:21:29.000Z');
+            const nowAt = new Date();
+
+            function disableBooking(){
+                bookingBtn.classList.add('opacity-60','cursor-not-allowed');
+                bookingBtn.removeAttribute('href');
+                bookingBtn.innerHTML = '<i class="fa fa-ban mr-2"></i>Pendaftaran Sudah Ditutup';
+            }
+            if (closeAt.getTime() <= nowAt.getTime()) disableBooking();
+
+            // Build dynamic booking link (simplified)
+            const urlParams = new URLSearchParams(window.location.search);
+            const voucher = urlParams.get('voucher');
+            const ref = localStorage.getItem('agentReferralCode');
+            let bookingHref = 'https://namira.travel/listings/tabungan-umrah-9p3vjp41wo/booking';
+            const p = new URLSearchParams();
+            if (ref) p.set('ref', ref);
+            if (voucher) p.set('voucher', voucher);
+            if (p.toString()) bookingHref += `?${p.toString()}`;
+            if (!bookingBtn.classList.contains('opacity-60')) bookingBtn.href = bookingHref;
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hubungi Kami - Namira Travel</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Custom Styles -->
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00534D',
+                        secondary: '#C7A200',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-poppins bg-white text-gray-800">
+    <!-- Include Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Include Content -->
+    <div id="content-container"></div>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript untuk include komponen -->
+    <script>
+        // Function untuk load komponen
+        async function loadComponent(containerId, filePath) {
+            try {
+                const response = await fetch(filePath);
+                const content = await response.text();
+                document.getElementById(containerId).innerHTML = content;
+            } catch (error) {
+                console.error(`Error loading ${filePath}:`, error);
+            }
+        }
+
+        // Load semua komponen
+        document.addEventListener('DOMContentLoaded', function() {
+            loadComponent('navbar-container', 'nav.html');
+            loadComponent('content-container', 'hubungi-kami-content.html');
+            loadComponent('footer-container', 'footer.html');
+        });
+    </script>
+</body>
+</html>
