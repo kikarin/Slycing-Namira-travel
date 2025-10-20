@@ -61,22 +61,76 @@
 
     <!-- JavaScript untuk include komponen -->
     <script>
-        // Function untuk load komponen
+        // Function untuk load komponen (tanpa bergantung pada script internal)
         async function loadComponent(containerId, filePath) {
-            try {
-                const response = await fetch(filePath);
-                const content = await response.text();
-                document.getElementById(containerId).innerHTML = content;
-            } catch (error) {
-                console.error(`Error loading ${filePath}:`, error);
-            }
+            const response = await fetch(filePath);
+            const content = await response.text();
+            const container = document.getElementById(containerId);
+            container.innerHTML = content;
         }
 
-        // Load semua komponen
-        document.addEventListener('DOMContentLoaded', function() {
+        function initAccordion(rootSelector, idPrefix) {
+            const root = document.querySelector(rootSelector);
+            if (!root) return;
+
+            // Delegasi klik untuk header
+            root.addEventListener('click', function(e) {
+                const header = e.target.closest('.accordion-header');
+                if (!header || !root.contains(header)) return;
+
+                const section = header.parentElement;
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('i');
+                const isHidden = content.classList.contains('hidden');
+
+                // Tutup semua di dalam root
+                root.querySelectorAll(`[id^="${idPrefix}"] .p-6`).forEach(el => el.classList.add('hidden'));
+                root.querySelectorAll(`[id^="${idPrefix}"] .accordion-header i`).forEach(i => { i.classList.remove('fa-minus'); i.classList.add('fa-plus'); });
+                root.querySelectorAll(`[id^="${idPrefix}"] .accordion-header`).forEach(h => h.setAttribute('aria-expanded', 'false'));
+
+                // Buka yang diklik
+                if (isHidden) {
+                    content.classList.remove('hidden');
+                    if (icon) { icon.classList.remove('fa-plus'); icon.classList.add('fa-minus'); }
+                    header.setAttribute('aria-expanded', 'true');
+                    if (section.id) history.replaceState(null, '', `#${section.id}`);
+                }
+            });
+
+            // Buka berdasarkan hash
+            const openByHash = () => {
+                const hash = location.hash.slice(1);
+                if (!hash) return;
+                const target = root.querySelector(`#${CSS.escape(hash)}`);
+                if (!target) return;
+                const header = target.querySelector('.accordion-header');
+                const content = header && header.nextElementSibling;
+                const icon = header && header.querySelector('i');
+                // Tutup semua
+                root.querySelectorAll(`[id^="${idPrefix}"] .p-6`).forEach(el => el.classList.add('hidden'));
+                root.querySelectorAll(`[id^="${idPrefix}"] .accordion-header i`).forEach(i => { i.classList.remove('fa-minus'); i.classList.add('fa-plus'); });
+                root.querySelectorAll(`[id^="${idPrefix}"] .accordion-header`).forEach(h => h.setAttribute('aria-expanded', 'false'));
+                // Buka target
+                if (header && content) {
+                    content.classList.remove('hidden');
+                    if (icon) { icon.classList.remove('fa-plus'); icon.classList.add('fa-minus'); }
+                    header.setAttribute('aria-expanded', 'true');
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            };
+
+            openByHash();
+            window.addEventListener('hashchange', openByHash);
+        }
+
+        // Load semua komponen dan init setelah konten siap
+        document.addEventListener('DOMContentLoaded', async function() {
             loadComponent('navbar-container', 'nav.html');
-            loadComponent('content-container', 'hubungi-kami-content.html');
+            await loadComponent('content-container', 'hubungi-kami-content.html');
             loadComponent('footer-container', 'footer.html');
+
+            // Inisialisasi accordion pada konten yang sudah dimuat
+            initAccordion('#content-container', 'cabang-');
         });
     </script>
 </body>

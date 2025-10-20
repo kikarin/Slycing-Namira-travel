@@ -173,7 +173,7 @@
                     <div class="space-y-6">
                         <!-- Cabang Solo -->
                         <div id="cabang-solo" class="border border-gray-200 rounded-lg overflow-hidden">
-                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="true">
+                            <div class="accordion-header bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="true">
                                 <h3 class="text-xl font-bold flex items-center">
                                     <i class="fa fa-minus mr-2"></i>
                                     Cabang Solo
@@ -221,10 +221,10 @@
                                                 <i class="fa fa-home"></i>
                                             </a>
                                             <a href="https://facebook.com/namiratravelsolo" target="_blank" class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
-                                                <i class="fa fa-facebook"></i>
+                                                <i class="fab fa-facebook"></i>
                                             </a>
                                             <a href="https://instagram.com/namiratravelsolo" target="_blank" class="w-8 h-8 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
-                                                <i class="fa fa-instagram"></i>
+                                                <i class="fab fa-instagram"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -234,7 +234,7 @@
 
                         <!-- Cabang Semarang -->
                         <div id="cabang-semarang" class="border border-gray-200 rounded-lg overflow-hidden">
-                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
+                            <div class="accordion-header bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
                                 <h3 class="text-xl font-bold flex items-center">
                                     <i class="fa fa-plus mr-2"></i>
                                     Cabang Semarang
@@ -278,8 +278,14 @@
                                         </ul>
                                         <h5 class="font-bold text-primary mb-3">Ikuti Kami</h5>
                                         <div class="flex space-x-3">
-                                            <a href="https://semarang.namira.travel/" target="_blank" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                                            <a href="https://solo.namira.travel/" target="_blank" class="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
                                                 <i class="fa fa-home"></i>
+                                            </a>
+                                            <a href="https://facebook.com/namiratravelsolo" target="_blank" class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                            <a href="https://instagram.com/namiratravelsolo" target="_blank" class="w-8 h-8 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+                                                <i class="fab fa-instagram"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -289,7 +295,7 @@
 
                         <!-- Cabang Majalengka -->
                         <div id="cabang-majalengka" class="border border-gray-200 rounded-lg overflow-hidden">
-                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
+                            <div class="accordion-header bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
                                 <h3 class="text-xl font-bold flex items-center">
                                     <i class="fa fa-plus mr-2"></i>
                                     Cabang Majalengka
@@ -343,7 +349,7 @@
 
                         <!-- Cabang Bogor -->
                         <div id="cabang-bogor" class="border border-gray-200 rounded-lg overflow-hidden">
-                            <div class="bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
+                            <div class="accordion-header bg-primary text-white p-4 cursor-pointer" role="button" aria-expanded="false">
                                 <h3 class="text-xl font-bold flex items-center">
                                     <i class="fa fa-plus mr-2"></i>
                                     Cabang Bogor
@@ -410,7 +416,7 @@
     <!-- JavaScript untuk accordion functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const accordionHeaders = document.querySelectorAll('.bg-primary');
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
             
             accordionHeaders.forEach(header => {
                 header.addEventListener('click', function() {
@@ -419,11 +425,16 @@
                     const icon = this.querySelector('i');
                     
                     const willOpen = content.classList.contains('hidden');
-                    // Close all other accordions
-                    document.querySelectorAll('.p-6').forEach(item => item.classList.add('hidden'));
-                    document.querySelectorAll('.bg-primary[aria-expanded] i').forEach(item => { item.classList.remove('fa-minus'); item.classList.add('fa-plus'); });
-                    document.querySelectorAll('.bg-primary[aria-expanded]').forEach(h => h.setAttribute('aria-expanded', 'false'));
 
+                    // Tutup semua accordion lain
+                    document.querySelectorAll('.p-6').forEach(item => item.classList.add('hidden'));
+                    document.querySelectorAll('.accordion-header i').forEach(item => {
+                        item.classList.remove('fa-minus');
+                        item.classList.add('fa-plus');
+                    });
+                    document.querySelectorAll('.accordion-header').forEach(h => h.setAttribute('aria-expanded', 'false'));
+
+                    // Buka kalau sebelumnya tertutup
                     if (willOpen) {
                         content.classList.remove('hidden');
                         icon.classList.remove('fa-plus');
@@ -432,28 +443,26 @@
                         if (wrapper.id) {
                             history.replaceState(null, '', `#${wrapper.id}`);
                         }
-                    } else {
-                        content.classList.add('hidden');
-                        icon.classList.remove('fa-minus');
-                        icon.classList.add('fa-plus');
-                        this.setAttribute('aria-expanded', 'false');
                     }
                 });
             });
 
-            // Open by hash if present
+            // Buka otomatis berdasarkan hash di URL
             const openByHash = () => {
                 const hash = location.hash.replace('#','');
                 if (!hash) return;
                 const section = document.getElementById(hash);
                 if (!section) return;
-                const header = section.querySelector('.bg-primary');
+                const header = section.querySelector('.accordion-header');
                 const content = header && header.nextElementSibling;
                 const icon = header && header.querySelector('i');
                 if (header && content && icon) {
                     document.querySelectorAll('.p-6').forEach(item => item.classList.add('hidden'));
-                    document.querySelectorAll('.bg-primary[aria-expanded] i').forEach(item => { item.classList.remove('fa-minus'); item.classList.add('fa-plus'); });
-                    document.querySelectorAll('.bg-primary[aria-expanded]').forEach(h => h.setAttribute('aria-expanded', 'false'));
+                    document.querySelectorAll('.accordion-header i').forEach(item => {
+                        item.classList.remove('fa-minus');
+                        item.classList.add('fa-plus');
+                    });
+                    document.querySelectorAll('.accordion-header').forEach(h => h.setAttribute('aria-expanded', 'false'));
                     content.classList.remove('hidden');
                     icon.classList.remove('fa-plus');
                     icon.classList.add('fa-minus');
